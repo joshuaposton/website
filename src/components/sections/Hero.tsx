@@ -12,8 +12,9 @@ export function Hero() {
           <Code className="h-12 w-12 text-indigo-500" />
         </div>
         <h1 className="text-4xl md:text-6xl font-bold tracking-tight mb-6">
-          Automate Your Business
-          <span className="block text-blue-500">Amplify Your Success</span>
+          <span className="block">Innovate.</span>
+          <span className="block text-blue-500">Automate.</span>
+          <span className="block bg-gradient-to-r from-blue-600 to-indigo-600 text-transparent bg-clip-text">Dominate.</span>
         </h1>
         <p className="max-w-[42rem] leading-normal text-muted-foreground mb-8 text-xl">
           Transform your business operations with custom automation solutions. We specialize in Make.com, Excel, Python, and Airtable development for small businesses.
