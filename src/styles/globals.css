@@ -1,4 +1,9 @@
 
+@import '@fontsource/space-grotesk/400.css';
+@import '@fontsource/space-grotesk/700.css';
+@import '@fontsource/ibm-plex-mono/400.css';
+@import '@fontsource/ibm-plex-mono/600.css';
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -25,6 +30,8 @@
     --input: 214.3 31.8% 91.4%;
     --ring: 221 83% 53%;
     --radius: 0.75rem;
+    --font-heading: "Space Grotesk", system-ui, sans-serif;
+    --font-mono: "IBM Plex Mono", monospace;
   }
 
   .dark {
@@ -56,5 +63,15 @@
   }
   body {
     @apply bg-background text-foreground;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+  }
+  .font-mono {
+    font-family: var(--font-mono);
+  }
+  .logo-text {
+    font-family: var(--font-mono);
+    letter-spacing: -0.02em;
   }
 }
