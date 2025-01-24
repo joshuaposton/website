@@ -1,4 +1,5 @@
 
+import Image from "next/image"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Github, Linkedin, Mail } from "lucide-react"
 import { Button } from "@/components/ui/button"
@@ -54,11 +55,12 @@ export function TeamSection() {
             <Card key={index} className="group hover:shadow-lg transition-all duration-300">
               <CardHeader className="text-center">
                 <div className="mb-4 relative mx-auto">
-                  <div className="w-32 h-32 rounded-full overflow-hidden mx-auto">
-                    <img
+                  <div className="w-32 h-32 rounded-full overflow-hidden mx-auto relative">
+                    <Image
                       src={member.image}
                       alt={member.name}
-                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                      fill
+                      className="object-cover group-hover:scale-110 transition-transform duration-300"
                     />
                   </div>
                   <div className="absolute inset-0 rounded-full bg-gradient-to-r from-blue-600/20 to-cyan-500/20 group-hover:opacity-100 opacity-0 transition-opacity" />
@@ -69,14 +71,20 @@ export function TeamSection() {
               <CardContent className="text-center">
                 <p className="text-muted-foreground mb-4">{member.description}</p>
                 <div className="flex justify-center space-x-4">
-                  <Button variant="ghost" size="icon">
-                    <Linkedin className="h-5 w-5" />
+                  <Button variant="ghost" size="icon" asChild>
+                    <a href={member.socials.linkedin} target="_blank" rel="noopener noreferrer">
+                      <Linkedin className="h-5 w-5" />
+                    </a>
                   </Button>
-                  <Button variant="ghost" size="icon">
-                    <Github className="h-5 w-5" />
+                  <Button variant="ghost" size="icon" asChild>
+                    <a href={member.socials.github} target="_blank" rel="noopener noreferrer">
+                      <Github className="h-5 w-5" />
+                    </a>
                   </Button>
-                  <Button variant="ghost" size="icon">
-                    <Mail className="h-5 w-5" />
+                  <Button variant="ghost" size="icon" asChild>
+                    <a href={`mailto:${member.socials.email}`}>
+                      <Mail className="h-5 w-5" />
+                    </a>
                   </Button>
                 </div>
               </CardContent>
