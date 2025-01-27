@@ -8,7 +8,7 @@ export default function ServicesPage() {
   return (
     <>
       <Head>
-        <title>Our Services - EchoFlow Labs</title>
+        <title>Professional Automation Services - EchoFlow Labs</title>
         <meta name="description" content="Explore our range of business automation services including Make.com integration, Excel automation, Python development, and Airtable solutions." />
       </Head>
       
