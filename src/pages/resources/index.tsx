@@ -4,20 +4,24 @@ import { Navbar } from "@/components/layout/Navbar"
 import { BlogSection } from "@/components/sections/BlogSection"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
+import Link from "next/link"
 
 export default function ResourcesPage() {
   const quickGuides = [
     {
       title: "Workflow Analysis",
-      description: "Learn how to analyze and optimize your current business workflows"
+      description: "Learn how to analyze and optimize your current business workflows",
+      slug: "workflow-analysis"
     },
     {
       title: "Integration Planning",
-      description: "Step-by-step guide to planning successful automation integrations"
+      description: "Step-by-step guide to planning successful automation integrations",
+      slug: "integration-planning"
     },
     {
       title: "ROI Calculation",
-      description: "Calculate the return on investment for your automation projects"
+      description: "Calculate the return on investment for your automation projects",
+      slug: "roi-calculation"
     }
   ]
 
@@ -55,17 +59,19 @@ export default function ResourcesPage() {
               <TabsContent value="quickstart">
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                   {quickGuides.map((guide, index) => (
-                    <Card key={index}>
-                      <CardHeader>
-                        <CardTitle>{guide.title}</CardTitle>
-                        <CardDescription>{guide.description}</CardDescription>
-                      </CardHeader>
-                      <CardContent>
-                        <span className="text-sm font-medium text-primary hover:underline cursor-pointer">
-                          View Guide →
-                        </span>
-                      </CardContent>
-                    </Card>
+                    <Link href={`/resources/quick-start/${guide.slug}`} key={index}>
+                      <Card className="h-full hover:shadow-lg transition-shadow">
+                        <CardHeader>
+                          <CardTitle>{guide.title}</CardTitle>
+                          <CardDescription>{guide.description}</CardDescription>
+                        </CardHeader>
+                        <CardContent>
+                          <span className="text-sm font-medium text-primary hover:underline">
+                            View Guide →
+                          </span>
+                        </CardContent>
+                      </Card>
+                    </Link>
                   ))}
                 </div>
               </TabsContent>
