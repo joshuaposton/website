@@ -30,7 +30,7 @@ const serviceBenefits = {
     "Enhanced Reporting",
     "Resource Optimization"
   ],
-  "python-development": [
+  "custom-automation": [
     "Custom Automation",
     "Data Processing Power",
     "Scalable Solutions",
@@ -111,7 +111,7 @@ export function ServiceDetails() {
                     </TabsContent>
                     <TabsContent value="benefits">
                       <div className="grid sm:grid-cols-3 gap-4">
-                        {benefits.map((benefit, i) => (
+                        {benefits?.map((benefit, i) => (
                           <Badge key={i} variant="outline" className="justify-center py-2">
                             {benefit}
                           </Badge>

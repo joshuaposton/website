@@ -66,23 +66,23 @@ export const services = [
     ]
   },
   {
-    id: "python-development",
-    title: "Python Development",
-    description: "Custom Python scripts and applications for business process automation",
+    id: "custom-automation",
+    title: "Custom Automation Solutions",
+    description: "Advanced automation solutions tailored to your unique business needs",
     icon: Code2,
     color: "text-indigo-500",
     useCases: [
-      "Data scraping and processing",
-      "File management and organization",
-      "API integrations and development",
-      "Custom reporting tools",
-      "Machine learning solutions"
+      "Complex workflow automation",
+      "Custom business applications",
+      "Data processing and analytics",
+      "System integration and APIs",
+      "Automated reporting solutions"
     ],
     examples: [
-      "Automated data extraction from websites",
-      "Custom API development for internal tools",
-      "Automated report generation systems",
-      "Data analysis and visualization tools"
+      "End-to-end business process automation",
+      "Custom business intelligence tools",
+      "Automated data processing systems",
+      "Integration middleware development"
     ]
   },
   {

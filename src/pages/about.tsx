@@ -2,8 +2,7 @@
 import Head from "next/head"
 import { Navbar } from "@/components/layout/Navbar"
 import { Card, CardContent } from "@/components/ui/card"
-import { Github, Linkedin, Mail, CircuitBoard, Code, Users } from "lucide-react"
-import { Button } from "@/components/ui/button"
+import { Building2, Code, Users } from "lucide-react"
 import Image from "next/image"
 
 export default function AboutPage() {
@@ -22,46 +21,26 @@ export default function AboutPage() {
               <div className="grid md:grid-cols-2 gap-12 items-center">
                 <div>
                   <h1 className="text-4xl font-bold tracking-tight mb-6">
-                    Empowering Small Businesses Through Automation
+                    Transforming Business Operations Through Automation
                   </h1>
-                  <p className="text-xl text-muted-foreground mb-8">
-                    Hi, I&apos;m the founder of EchoFlow Labs. With expertise in Make.com, Excel, Python, and Airtable development, 
-                    I&apos;m passionate about helping small businesses streamline their operations through intelligent automation.
+                  <p className="text-xl text-muted-foreground">
+                    EchoFlow Labs specializes in empowering small businesses with intelligent automation solutions. Our expertise in Make.com, Excel, Python, and Airtable development enables organizations to streamline operations and achieve sustainable growth.
                   </p>
-                  <div className="flex space-x-4">
-                    <Button variant="ghost" size="icon" asChild>
-                      <a href="#" target="_blank" rel="noopener noreferrer">
-                        <Linkedin className="h-5 w-5" />
-                      </a>
-                    </Button>
-                    <Button variant="ghost" size="icon" asChild>
-                      <a href="#" target="_blank" rel="noopener noreferrer">
-                        <Github className="h-5 w-5" />
-                      </a>
-                    </Button>
-                    <Button variant="ghost" size="icon" asChild>
-                      <a href="mailto:contact@echoflowlabs.com">
-                        <Mail className="h-5 w-5" />
-                      </a>
-                    </Button>
-                  </div>
                 </div>
                 <Card>
                   <CardContent className="p-6">
-                    <h2 className="text-2xl font-semibold mb-4">My Mission</h2>
+                    <h2 className="text-2xl font-semibold mb-4">Our Commitment</h2>
                     <p className="text-muted-foreground mb-6">
-                      I founded EchoFlow Labs with a clear vision: to make powerful automation solutions accessible to small businesses. 
-                      By combining technical expertise with a deep understanding of business needs, I help companies save time, 
-                      reduce errors, and focus on what matters most - growing their business.
+                      EchoFlow Labs was established with a clear purpose: making powerful automation solutions accessible to small businesses. By combining technical expertise with deep business insights, we help organizations save time, reduce errors, and focus on strategic growth.
                     </p>
                     <div className="space-y-4">
                       <div className="flex items-center space-x-4">
                         <div className="h-10 w-10 rounded-full bg-blue-100 flex items-center justify-center">
-                          <CircuitBoard className="h-6 w-6 text-blue-600" />
+                          <Building2 className="h-6 w-6 text-blue-600" />
                         </div>
                         <div>
-                          <h3 className="font-medium">Custom Solutions</h3>
-                          <p className="text-sm text-muted-foreground">Tailored automation workflows for your specific needs</p>
+                          <h3 className="font-medium">Industry Experience</h3>
+                          <p className="text-sm text-muted-foreground">Deep understanding of small business needs</p>
                         </div>
                       </div>
                       <div className="flex items-center space-x-4">
@@ -69,8 +48,8 @@ export default function AboutPage() {
                           <Code className="h-6 w-6 text-blue-600" />
                         </div>
                         <div>
-                          <h3 className="font-medium">Technical Expertise</h3>
-                          <p className="text-sm text-muted-foreground">Proficient in Make.com, Excel, Python, and Airtable</p>
+                          <h3 className="font-medium">Technical Excellence</h3>
+                          <p className="text-sm text-muted-foreground">Expertise in leading automation platforms</p>
                         </div>
                       </div>
                       <div className="flex items-center space-x-4">
@@ -78,8 +57,8 @@ export default function AboutPage() {
                           <Users className="h-6 w-6 text-blue-600" />
                         </div>
                         <div>
-                          <h3 className="font-medium">Personal Attention</h3>
-                          <p className="text-sm text-muted-foreground">Direct collaboration with every client</p>
+                          <h3 className="font-medium">Client-Focused Approach</h3>
+                          <p className="text-sm text-muted-foreground">Dedicated support and collaboration</p>
                         </div>
                       </div>
                     </div>
