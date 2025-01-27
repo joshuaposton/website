@@ -1,7 +1,7 @@
 
 import Head from "next/head"
 import { Navbar } from "@/components/layout/Navbar"
-import { Services } from "@/components/sections/Services"
+import { ServiceDetails } from "@/components/sections/ServiceDetails"
 
 export default function ServicesPage() {
   return (
@@ -18,15 +18,15 @@ export default function ServicesPage() {
             <div className="container">
               <div className="max-w-[800px] mx-auto text-center">
                 <h1 className="text-4xl font-bold tracking-tight mb-6">
-                  Our Services
+                  Automation Solutions
                 </h1>
                 <p className="text-xl text-muted-foreground mb-8">
-                  We provide comprehensive automation solutions tailored to your business needs. From workflow automation to custom integrations, we help you work smarter, not harder.
+                  Dive deep into our comprehensive suite of automation services. Each solution is carefully crafted to transform your business operations and drive efficiency.
                 </p>
               </div>
             </div>
           </section>
-          <Services />
+          <ServiceDetails />
         </main>
       </div>
     </>
