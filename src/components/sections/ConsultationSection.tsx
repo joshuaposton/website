@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button"
 import { ArrowRight, MessageSquare, Sparkles, Target } from "lucide-react"
 import Link from "next/link"
 
-export const ConsultationSection = () => {
+export function ConsultationSection() {
   return (
     <section className="py-20 bg-slate-50">
       <div className="container">
