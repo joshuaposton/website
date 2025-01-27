@@ -46,52 +46,62 @@ export default function WorkflowAnalysisGuide() {
                   <h2 className="text-2xl font-semibold mb-4">Step 1: Document Current Workflows</h2>
                   <p className="mb-6">
                     Start by mapping out your current business processes. Focus on:
-                    • Daily repetitive tasks
-                    • Manual data entry processes
-                    • Customer service workflows
-                    • Internal communication patterns
-                    • Document handling procedures
+                    <ul className="list-disc pl-6 space-y-2 mt-2">
+                      <li>Daily repetitive tasks</li>
+                      <li>Manual data entry processes</li>
+                      <li>Customer service workflows</li>
+                      <li>Internal communication patterns</li>
+                      <li>Document handling procedures</li>
+                    </ul>
                   </p>
 
                   <h2 className="text-2xl font-semibold mb-4">Step 2: Identify Pain Points</h2>
                   <p className="mb-6">
                     Look for these common issues:
-                    • Time-consuming manual tasks
-                    • Frequent errors or mistakes
-                    • Communication bottlenecks
-                    • Duplicate data entry
-                    • Delayed responses or approvals
+                    <ul className="list-disc pl-6 space-y-2 mt-2">
+                      <li>Time-consuming manual tasks</li>
+                      <li>Frequent errors or mistakes</li>
+                      <li>Communication bottlenecks</li>
+                      <li>Duplicate data entry</li>
+                      <li>Delayed responses or approvals</li>
+                    </ul>
                   </p>
 
                   <h2 className="text-2xl font-semibold mb-4">Step 3: Measure Current Performance</h2>
                   <p className="mb-6">
                     Track key metrics:
-                    • Time spent on tasks
-                    • Error rates
-                    • Process completion times
-                    • Resource utilization
-                    • Customer satisfaction levels
+                    <ul className="list-disc pl-6 space-y-2 mt-2">
+                      <li>Time spent on tasks</li>
+                      <li>Error rates</li>
+                      <li>Process completion times</li>
+                      <li>Resource utilization</li>
+                      <li>Customer satisfaction levels</li>
+                    </ul>
                   </p>
 
                   <h2 className="text-2xl font-semibold mb-4">Step 4: Prioritize Automation Opportunities</h2>
                   <p className="mb-6">
                     Rate each process based on:
-                    • Potential time savings
-                    • Error reduction impact
-                    • Implementation complexity
-                    • Required resources
-                    • Expected ROI
+                    <ul className="list-disc pl-6 space-y-2 mt-2">
+                      <li>Potential time savings</li>
+                      <li>Error reduction impact</li>
+                      <li>Implementation complexity</li>
+                      <li>Required resources</li>
+                      <li>Expected ROI</li>
+                    </ul>
                   </p>
 
                   <div className="bg-muted p-6 rounded-lg mb-6">
                     <h3 className="text-xl font-semibold mb-2">How EchoFlow Labs Can Help</h3>
                     <p>
                       Our team of experts can:
-                      • Conduct professional workflow analysis
-                      • Identify automation opportunities
-                      • Create detailed process maps
-                      • Recommend optimal solutions
-                      • Guide implementation strategy
+                      <ul className="list-disc pl-6 space-y-2 mt-2">
+                        <li>Conduct professional workflow analysis</li>
+                        <li>Identify automation opportunities</li>
+                        <li>Create detailed process maps</li>
+                        <li>Recommend optimal solutions</li>
+                        <li>Guide implementation strategy</li>
+                      </ul>
                     </p>
                   </div>
                 </div>
