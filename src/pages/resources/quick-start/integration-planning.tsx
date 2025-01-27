@@ -46,52 +46,62 @@ export default function IntegrationPlanningGuide() {
                   <h2 className="text-2xl font-semibold mb-4">Step 1: Define Integration Goals</h2>
                   <p className="mb-6">
                     Begin with clear objectives:
-                    • Specific processes to automate
-                    • Desired outcomes and metrics
-                    • Timeline expectations
-                    • Budget constraints
-                    • Resource availability
+                    <ul className="list-disc pl-6 space-y-2 mt-2">
+                      <li>Specific processes to automate</li>
+                      <li>Desired outcomes and metrics</li>
+                      <li>Timeline expectations</li>
+                      <li>Budget constraints</li>
+                      <li>Resource availability</li>
+                    </ul>
                   </p>
 
                   <h2 className="text-2xl font-semibold mb-4">Step 2: System Assessment</h2>
                   <p className="mb-6">
                     Evaluate your current systems:
-                    • Identify all systems involved
-                    • Document API capabilities
-                    • Check data formats
-                    • Review security requirements
-                    • Assess integration points
+                    <ul className="list-disc pl-6 space-y-2 mt-2">
+                      <li>Identify all systems involved</li>
+                      <li>Document API capabilities</li>
+                      <li>Check data formats</li>
+                      <li>Review security requirements</li>
+                      <li>Assess integration points</li>
+                    </ul>
                   </p>
 
                   <h2 className="text-2xl font-semibold mb-4">Step 3: Data Mapping</h2>
                   <p className="mb-6">
                     Create your data strategy:
-                    • Map data fields between systems
-                    • Define transformation rules
-                    • Plan error handling
-                    • Set up validation rules
-                    • Document data flow
+                    <ul className="list-disc pl-6 space-y-2 mt-2">
+                      <li>Map data fields between systems</li>
+                      <li>Define transformation rules</li>
+                      <li>Plan error handling</li>
+                      <li>Set up validation rules</li>
+                      <li>Document data flow</li>
+                    </ul>
                   </p>
 
                   <h2 className="text-2xl font-semibold mb-4">Step 4: Testing Strategy</h2>
                   <p className="mb-6">
                     Plan your testing approach:
-                    • Create test scenarios
-                    • Set up test environments
-                    • Define success criteria
-                    • Plan rollback procedures
-                    • Schedule testing phases
+                    <ul className="list-disc pl-6 space-y-2 mt-2">
+                      <li>Create test scenarios</li>
+                      <li>Set up test environments</li>
+                      <li>Define success criteria</li>
+                      <li>Plan rollback procedures</li>
+                      <li>Schedule testing phases</li>
+                    </ul>
                   </p>
 
                   <div className="bg-muted p-6 rounded-lg mb-6">
                     <h3 className="text-xl font-semibold mb-2">How EchoFlow Labs Can Help</h3>
                     <p>
                       Our integration experts provide:
-                      • Complete integration planning
-                      • System compatibility analysis
-                      • Custom integration development
-                      • Testing and validation
-                      • Implementation support
+                      <ul className="list-disc pl-6 space-y-2 mt-2">
+                        <li>Complete integration planning</li>
+                        <li>System compatibility analysis</li>
+                        <li>Custom integration development</li>
+                        <li>Testing and validation</li>
+                        <li>Implementation support</li>
+                      </ul>
                     </p>
                   </div>
                 </div>
