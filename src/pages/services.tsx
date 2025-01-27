@@ -2,6 +2,7 @@
 import Head from "next/head"
 import { Navbar } from "@/components/layout/Navbar"
 import { ServiceDetails } from "@/components/sections/ServiceDetails"
+import { PricingSection } from "@/components/sections/PricingSection"
 
 export default function ServicesPage() {
   return (
@@ -27,6 +28,7 @@ export default function ServicesPage() {
             </div>
           </section>
           <ServiceDetails />
+          <PricingSection />
         </main>
       </div>
     </>
