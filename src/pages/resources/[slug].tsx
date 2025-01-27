@@ -5,9 +5,10 @@ import { Navbar } from "@/components/layout/Navbar"
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
-import { ArrowLeft, CheckCircle, AlertCircle } from "lucide-react"
+import { ArrowLeft, CheckCircle, AlertCircle, ArrowRight } from "lucide-react"
 import Link from "next/link"
 import { Alert, AlertDescription } from "@/components/ui/alert"
+import { Separator } from "@/components/ui/separator"
 
 const articles = {
   "getting-started-automation": {
@@ -15,15 +16,15 @@ const articles = {
     category: "Fundamentals",
     readTime: "5 min read",
     content: `
-      Business process automation (BPA) is revolutionizing how organizations operate in the digital age. In this comprehensive guide, we'll explore the fundamental concepts and provide practical steps to begin your automation journey.
+      Business process automation (BPA) is revolutionizing how organizations operate in the digital age. At EchoFlow Labs, we've helped numerous businesses transform their operations through strategic automation. Let's explore how you can begin this journey.
 
       What is Business Process Automation?
       At its core, BPA is the use of technology to execute recurring tasks or processes in a business where manual effort can be replaced. Think of it as creating a digital assembly line for your business processes.
 
       Real-World Example:
-      Consider a sales team that manually enters customer data from emails into a CRM system. Here's how automation transforms this process:
-      • Before: Sales team spends 2 hours daily copying data from emails to CRM
-      • After: Automated workflow captures email data and updates CRM instantly
+      Here's how we helped one of our clients transform their sales process:
+      • Before: Sales team spent 2 hours daily copying data from emails to CRM
+      • Our Solution: Implemented automated workflow capturing email data
       • Result: 10 hours saved weekly, 40 hours monthly, zero data entry errors
 
       Identifying Automation Opportunities:
@@ -34,32 +35,35 @@ const articles = {
       4. Prone to human error
       5. Data-heavy with multiple system interactions
 
-      Example Assessment:
-      Process: Invoice Processing
-      • Manual Steps: 15
-      • Time Per Invoice: 20 minutes
-      • Error Rate: 5%
-      • Automation Potential: High
-      • Expected Time Savings: 85%
+      How EchoFlow Labs Can Help:
+      While this guide provides a foundation for automation, implementing these solutions requires expertise and experience. Our team specializes in:
 
-      Choosing the Right Tools:
-      Different processes require different automation tools:
-      1. Data Entry & Form Processing
-         • Make.com for workflow automation
-         • Zapier for simple integrations
-         • UiPath for desktop automation
+      • Custom Workflow Design: We analyze your specific needs and design tailored automation solutions
+      • Expert Implementation: Our technical team handles the entire setup and integration process
+      • Training & Support: We ensure your team is confident in using the new automated systems
+      • Ongoing Optimization: We continuously monitor and improve your automation workflows
 
-      2. Document Management
-         • SharePoint for document workflows
-         • DocuSign for signature automation
-         • Adobe Sign for contract management
+      Ready to Transform Your Business?
+      Let us help you implement these automation strategies in your organization. Our team of experts will guide you through each step of the process, ensuring a smooth transition to automated workflows.
+    `,
+    ctaTitle: "Ready to Start Your Automation Journey?",
+    ctaDescription: "Book a free consultation with our automation experts to discuss your specific needs and how we can help transform your business processes."
+  },
+  "automation-best-practices": {
+    title: "Automation Best Practices for Small Businesses",
+    category: "Best Practices",
+    readTime: "8 min read",
+    content: `
+      Implementing automation successfully requires more than just tools - it requires strategy and expertise. At EchoFlow Labs, we've developed these best practices through years of helping businesses automate their operations.
 
-      3. Customer Communication
-         • Intercom for chat automation
-         • Mailchimp for email sequences
-         • Zendesk for ticket management
+      Strategic Planning:
+      • Start with clear objectives
+      • Document current processes
+      • Identify automation priorities
+      • Set measurable goals
+      • Plan for scalability
 
-      Implementation Strategy:
+      Implementation Best Practices:
       1. Start Small
          • Choose one simple process
          • Document current workflow
@@ -67,19 +71,11 @@ const articles = {
          • Test with real data
          • Monitor and adjust
 
-      2. Scale Gradually
-         • Analyze results
-         • Document learnings
-         • Train team members
-         • Expand to related processes
-
-      Measuring Success:
-      Track these key metrics:
-      • Time saved per process
-      • Error reduction rate
-      • Cost savings
-      • Employee satisfaction
-      • Customer satisfaction improvement
+      2. Focus on Impact
+         • Target high-volume tasks
+         • Address error-prone processes
+         • Look for quick wins
+         • Measure ROI constantly
 
       Common Pitfalls to Avoid:
       • Automating broken processes
@@ -88,228 +84,68 @@ const articles = {
       • Skipping testing phases
       • Failing to measure results
 
-      Next Steps:
-      1. Audit your current processes
-      2. Identify top 3 automation candidates
-      3. Document process flows
-      4. Research appropriate tools
-      5. Create implementation timeline
-    `
-  },
-  "automation-best-practices": {
-    title: "Automation Best Practices for Small Businesses",
-    category: "Best Practices",
-    readTime: "8 min read",
-    content: `
-      Implementing automation in small businesses requires strategic thinking and careful execution. This guide provides proven best practices based on real-world implementations.
+      Partner with Experts:
+      While these best practices provide a framework, successful implementation often requires expert guidance. At EchoFlow Labs, we:
 
-      1. Start Small and Scale Gradually
-      Practical Example:
-      A retail store began by automating their inventory alerts:
-      • Week 1-2: Set up automated low stock notifications
-      • Week 3-4: Added automated reorder triggers
-      • Week 5-6: Integrated with supplier systems
-      • Week 7-8: Added sales forecasting
-      Result: 60% reduction in stockouts, 25% decrease in inventory costs
-
-      2. Document Everything
-      Essential Documentation Checklist:
-      • Process flowcharts
-      • System dependencies
-      • Integration points
-      • Error handling procedures
-      • Recovery protocols
-      • Training materials
-
-      3. Train Your Team
-      Effective Training Approach:
-      • Initial Assessment
-        - Skill gap analysis
-        - Learning style evaluation
-        - Tool familiarity check
-      
-      • Training Program
-        - Hands-on workshops
-        - Video tutorials
-        - Practice environments
-        - Regular feedback sessions
-
-      4. Monitor and Optimize
-      Key Performance Indicators:
-      • Process Efficiency
-        - Completion time
-        - Error rates
-        - Resource usage
-      
-      • Business Impact
-        - Cost savings
-        - Revenue impact
-        - Customer satisfaction
-        - Employee productivity
-
-      5. Maintain Security
-      Security Checklist:
-      • Access Control
-        - Role-based permissions
-        - Regular access audits
-        - Strong password policies
-      
-      • Data Protection
-        - Encryption standards
-        - Backup procedures
-        - Compliance requirements
-
-      Real-World Implementation Example:
-      Small Marketing Agency Case Study:
-      Before Automation:
-      • 20 hours weekly on report generation
-      • 15% error rate in data collection
-      • 3-day delay in client reporting
-
-      After Automation:
-      • 2 hours weekly on report oversight
-      • <1% error rate
-      • Real-time client dashboards
-      • 40% increase in client satisfaction
-
-      Implementation Timeline:
-      Week 1: Process Analysis
-      • Documented current workflows
-      • Identified bottlenecks
-      • Set success metrics
-
-      Week 2-3: Tool Selection
-      • Evaluated options
-      • Tested integrations
-      • Selected final tools
-
-      Week 4-6: Implementation
-      • Built automated workflows
-      • Tested with sample data
-      • Trained team members
-
-      Week 7-8: Optimization
-      • Monitored performance
-      • Gathered feedback
-      • Made adjustments
-
-      Results After 3 Months:
-      • 85% time savings
-      • 95% accuracy rate
-      • 30% cost reduction
-      • Positive team feedback
-    `
+      • Handle the Technical Complexity: Our team manages the intricate details of automation setup
+      • Ensure Best Practice Implementation: We apply industry standards and proven methodologies
+      • Provide Ongoing Support: We're here to help you evolve and optimize your automation
+      • Guarantee Results: Our solutions are backed by measurable improvements in efficiency
+    `,
+    ctaTitle: "Want to Implement These Best Practices?",
+    ctaDescription: "Let our experts help you apply these best practices in your business. Schedule a consultation to discuss your automation goals."
   },
   "make-integration-guide": {
     title: "Make.com Integration Guide",
     category: "Technical Guide",
     readTime: "10 min read",
     content: `
-      Make.com (formerly Integromat) is a powerful automation platform that can transform your business processes. This technical guide will walk you through creating robust automation workflows.
+      What is Make.com?
+      Make.com (formerly Integromat) is a powerful automation platform that connects apps and services you use daily. Think of it as a digital Swiss Army knife that can connect your email, CRM, spreadsheets, and other tools to work together automatically. At EchoFlow Labs, we're certified Make.com experts who help businesses harness this powerful platform.
 
-      Getting Started with Make.com:
-      1. Account Setup
-         • Sign up at Make.com
-         • Choose your plan based on needs
-         • Set up team access if needed
-         • Configure basic settings
+      Why Choose Make.com?
+      • Visual Workflow Builder: Create complex automations without coding
+      • 1000+ App Integrations: Connect virtually any business tool
+      • Real-time Processing: Handle tasks as they happen
+      • Advanced Features: Error handling, data mapping, and scheduling
+      • Cost-effective: Pay only for what you use
 
-      Understanding Key Concepts:
-      • Scenarios: Your automation workflows
-      • Modules: Individual action steps
-      • Routes: Conditional paths
-      • Functions: Data transformation tools
-      • Webhooks: External triggers
+      Real Business Applications:
+      1. Customer Onboarding
+         • Automatically create accounts
+         • Send welcome emails
+         • Schedule follow-ups
+         • Track engagement
 
-      Building Your First Scenario:
-      Step-by-Step Example:
-      Let's automate lead capture from a form to your CRM:
+      2. Sales Process
+         • Lead capture from multiple sources
+         • Automatic CRM updates
+         • Sales team notifications
+         • Contract generation
 
-      1. Trigger Setup
-         • Choose "Webhooks" module
-         • Configure custom webhook
-         • Test with sample data
+      3. Data Management
+         • Sync across platforms
+         • Automatic backups
+         • Data transformation
+         • Error reporting
 
-      2. Data Processing
-         • Add "Tools" module
-         • Set up data transformation
-         • Validate output format
+      How We Help With Make.com:
+      At EchoFlow Labs, we specialize in:
 
-      3. CRM Integration
-         • Add CRM module
-         • Map incoming data
-         • Set error handling
+      • Professional Integration Services: We handle the technical setup and configuration
+      • Custom Workflow Development: We build automated processes tailored to your needs
+      • Training & Documentation: We ensure your team can manage the workflows
+      • Ongoing Support: We provide maintenance and optimization services
 
-      Advanced Features:
-      1. Error Handling
-         • Retry mechanisms
-         • Error notifications
-         • Fallback routes
-
-      2. Data Mapping
-         • Array mapping
-         • Aggregation
-         • Filtering
-
-      3. Scheduling
-         • Time-based triggers
-         • Recurring schedules
-         • Queue management
-
-      Real Implementation Example:
-      Automated Customer Onboarding:
-      
-      Workflow Steps:
-      1. Form Submission
-         • Capture customer data
-         • Validate inputs
-         • Send confirmation
-
-      2. Account Creation
-         • Generate credentials
-         • Set up user profile
-         • Configure preferences
-
-      3. Welcome Sequence
-         • Send welcome email
-         • Schedule onboarding call
-         • Provide resources
-
-      4. Follow-up
-         • Monitor engagement
-         • Send reminder if needed
-         • Collect feedback
-
-      Performance Optimization:
-      • Use batch operations
-      • Implement caching
-      • Optimize data transfers
-      • Monitor execution times
-
-      Troubleshooting Guide:
-      Common Issues:
-      1. Connection Timeouts
-         • Check API limits
-         • Verify credentials
-         • Test endpoint status
-
-      2. Data Mapping Errors
-         • Validate data types
-         • Check required fields
-         • Test transformations
-
-      3. Execution Failures
-         • Review error logs
-         • Check dependencies
-         • Verify permissions
-
-      Best Practices:
-      • Use test scenarios
-      • Document all workflows
-      • Monitor usage limits
-      • Regular maintenance
-      • Backup configurations
-    `
+      Getting Started with Make.com Through EchoFlow Labs:
+      1. Initial Consultation: We assess your needs and identify automation opportunities
+      2. Solution Design: We create custom workflows for your specific processes
+      3. Implementation: We handle the technical setup and testing
+      4. Training: We ensure your team knows how to manage the system
+      5. Ongoing Support: We're here to help as your needs evolve
+    `,
+    ctaTitle: "Need Help with Make.com Integration?",
+    ctaDescription: "Our Make.com certified experts can help you implement and optimize your automation workflows. Book a consultation to get started."
   }
 }
 
@@ -368,6 +204,24 @@ export default function ResourcePage() {
                       )}
                     </p>
                   ))}
+                </div>
+
+                <Separator className="my-8" />
+
+                <div className="bg-muted/50 rounded-lg p-6 mt-8">
+                  <h2 className="text-2xl font-bold mb-4">{article.ctaTitle}</h2>
+                  <p className="mb-6 text-muted-foreground">{article.ctaDescription}</p>
+                  <div className="flex gap-4">
+                    <Button asChild size="lg">
+                      <Link href="/get-started">
+                        Get Started
+                        <ArrowRight className="ml-2 h-4 w-4" />
+                      </Link>
+                    </Button>
+                    <Button variant="outline" asChild size="lg">
+                      <Link href="/contact">Contact Us</Link>
+                    </Button>
+                  </div>
                 </div>
               </CardContent>
             </Card>
