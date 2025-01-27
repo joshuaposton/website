@@ -5,6 +5,57 @@ import { services } from "./Services"
 import { Badge } from "@/components/ui/badge"
 import { ArrowRight, CheckCircle2 } from "lucide-react"
 
+const serviceBenefits = {
+  "make-automation": [
+    "Seamless App Integration",
+    "Real-time Data Flow",
+    "Process Optimization",
+    "Reduced Manual Work",
+    "Scalable Workflows",
+    "Error Prevention"
+  ],
+  "airtable-development": [
+    "Centralized Data Management",
+    "Custom Workflows",
+    "Team Collaboration",
+    "Visual Analytics",
+    "Process Automation",
+    "Data Security"
+  ],
+  "excel-automation": [
+    "Time Savings",
+    "Error Reduction",
+    "Data Accuracy",
+    "Process Standardization",
+    "Enhanced Reporting",
+    "Resource Optimization"
+  ],
+  "python-development": [
+    "Custom Automation",
+    "Data Processing Power",
+    "Scalable Solutions",
+    "Integration Capability",
+    "Performance Optimization",
+    "Advanced Analytics"
+  ],
+  "process-automation": [
+    "Workflow Optimization",
+    "Resource Efficiency",
+    "Quality Improvement",
+    "Cost Reduction",
+    "Compliance Management",
+    "Enhanced Productivity"
+  ],
+  "integration-services": [
+    "System Unification",
+    "Data Consistency",
+    "Process Streamlining",
+    "Real-time Updates",
+    "Enhanced Efficiency",
+    "Scalable Architecture"
+  ]
+}
+
 export function ServiceDetails() {
   return (
     <section className="py-20">
@@ -12,6 +63,8 @@ export function ServiceDetails() {
         <div className="grid grid-cols-1 gap-12">
           {services.map((service, index) => {
             const Icon = service.icon
+            const benefits = serviceBenefits[service.id as keyof typeof serviceBenefits]
+            
             return (
               <Card key={index} className="border-2">
                 <CardHeader className="border-b bg-slate-50/50">
@@ -58,24 +111,11 @@ export function ServiceDetails() {
                     </TabsContent>
                     <TabsContent value="benefits">
                       <div className="grid sm:grid-cols-3 gap-4">
-                        <Badge variant="outline" className="justify-center py-2">
-                          Increased Efficiency
-                        </Badge>
-                        <Badge variant="outline" className="justify-center py-2">
-                          Cost Reduction
-                        </Badge>
-                        <Badge variant="outline" className="justify-center py-2">
-                          Error Prevention
-                        </Badge>
-                        <Badge variant="outline" className="justify-center py-2">
-                          Time Savings
-                        </Badge>
-                        <Badge variant="outline" className="justify-center py-2">
-                          Scalable Solutions
-                        </Badge>
-                        <Badge variant="outline" className="justify-center py-2">
-                          Custom Integration
-                        </Badge>
+                        {benefits.map((benefit, i) => (
+                          <Badge key={i} variant="outline" className="justify-center py-2">
+                            {benefit}
+                          </Badge>
+                        ))}
                       </div>
                     </TabsContent>
                   </Tabs>
