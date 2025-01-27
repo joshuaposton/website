@@ -94,7 +94,7 @@ export default function ServiceDetailPage() {
                     <div className="text-center space-y-4">
                       <h3 className="text-2xl font-semibold">Ready to Automate Your Business?</h3>
                       <p className="text-muted-foreground">
-                        Let's discuss how {service.title.toLowerCase()} can transform your operations
+                        Let&apos;s discuss how {service.title.toLowerCase()} can transform your operations
                       </p>
                       <Button size="lg" asChild>
                         <Link href="/get-started">Get Started</Link>

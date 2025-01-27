@@ -35,7 +35,7 @@ export default function GetStartedPage() {
                       <div>
                         <h3 className="text-xl font-semibold mb-2">1. Schedule a Free Consultation</h3>
                         <p className="text-muted-foreground mb-4">
-                          Book a call to discuss your business needs and challenges. We'll explore potential automation opportunities together.
+                          Book a call to discuss your business needs and challenges. We&apos;ll explore potential automation opportunities together.
                         </p>
                         <Button variant="outline">Schedule Call</Button>
                       </div>

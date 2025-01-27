@@ -25,8 +25,8 @@ export default function AboutPage() {
                     Empowering Small Businesses Through Automation
                   </h1>
                   <p className="text-xl text-muted-foreground mb-8">
-                    Hi, I'm the founder of EchoFlow Labs. With expertise in Make.com, Excel, Python, and Airtable development, 
-                    I'm passionate about helping small businesses streamline their operations through intelligent automation.
+                    Hi, I&apos;m the founder of EchoFlow Labs. With expertise in Make.com, Excel, Python, and Airtable development, 
+                    I&apos;m passionate about helping small businesses streamline their operations through intelligent automation.
                   </p>
                   <div className="flex space-x-4">
                     <Button variant="ghost" size="icon" asChild>

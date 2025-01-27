@@ -23,7 +23,7 @@ export default function ContactPage() {
               <div className="text-center mb-12">
                 <h1 className="text-4xl font-bold tracking-tight mb-4">Get in Touch</h1>
                 <p className="text-xl text-muted-foreground">
-                  Let's discuss how we can automate and streamline your business processes.
+                  Let&apos;s discuss how we can automate and streamline your business processes.
                 </p>
               </div>
               
