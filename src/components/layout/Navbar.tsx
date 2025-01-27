@@ -14,6 +14,9 @@ export function Navbar() {
           <Link href="/services" className="text-foreground/60 hover:text-foreground transition-colors">
             Services
           </Link>
+          <Link href="/resources" className="text-foreground/60 hover:text-foreground transition-colors">
+            Resources
+          </Link>
           <Link href="/about" className="text-foreground/60 hover:text-foreground transition-colors">
             About
           </Link>
