@@ -70,31 +70,26 @@ export function Hero() {
           </div>
         </div>
 
-        <motion.h1 
-          className="text-4xl md:text-6xl font-bold tracking-tight mb-6"
+        <motion.div 
+          className="max-w-[56rem] mx-auto space-y-8"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2, duration: 0.8 }}
         >
-          <span className="block">Innovate.</span>
-          <span className="block text-blue-500">Automate.</span>
-          <span className="block bg-gradient-to-r from-blue-600 to-indigo-600 text-transparent bg-clip-text">
-            Dominate.
-          </span>
-        </motion.h1>
-
-        <motion.p 
-          className="max-w-[42rem] leading-normal text-muted-foreground mb-8 text-xl relative z-10"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.4, duration: 0.8 }}
-        >
-          Transform your business operations with custom automation solutions. 
-          We specialize in Make.com, Excel, Python, and Airtable development for small businesses.
-        </motion.p>
+          <h1 className="text-4xl md:text-6xl font-bold tracking-tight text-center">
+            Revolutionizing Business Operations with Cutting-Edge Automation
+          </h1>
+          
+          <p className="text-xl text-muted-foreground leading-relaxed">
+            At EchoFlow Labs, we ignite innovation for small businesses through intelligent automation. 
+            With our mastery in Make.com, Excel, Python, and Airtable, we design smart solutions that 
+            optimize workflows, enhance efficiency, and drive sustainable growth. Experience the power 
+            of technology tailored to transform your business!
+          </p>
+        </motion.div>
 
         <motion.div 
-          className="flex flex-col sm:flex-row gap-4 w-full justify-center"
+          className="flex flex-col sm:flex-row gap-4 w-full justify-center mt-12"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.6, duration: 0.8 }}
