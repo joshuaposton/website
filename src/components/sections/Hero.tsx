@@ -77,7 +77,7 @@ export function Hero() {
           transition={{ delay: 0.2, duration: 0.8 }}
         >
           <h1 className="text-4xl md:text-6xl font-bold tracking-tight text-center">
-            Revolutionizing Business Operations with Cutting-Edge Automation
+            Innovate. Automate. Dominate.
           </h1>
           
           <p className="text-xl text-muted-foreground leading-relaxed">
