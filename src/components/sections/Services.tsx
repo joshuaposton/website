@@ -3,6 +3,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Workflow, Table2, FileSpreadsheet, Code2, Bot, Laptop } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
+import { motion } from "framer-motion"
 
 export const services = [
   {
@@ -131,43 +132,61 @@ export function Services() {
   return (
     <section id="services" className="py-20 bg-slate-50/50">
       <div className="container">
-        <div className="text-center mb-16">
+        <motion.div 
+          className="text-center mb-16"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+        >
           <h2 className="text-3xl font-bold tracking-tight mb-4">Our Services</h2>
           <p className="text-xl text-muted-foreground max-w-[800px] mx-auto">
             We help small businesses streamline their operations with custom automation solutions.
             Transform your workflow with our specialized services.
           </p>
-        </div>
+        </motion.div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {services.map((service, index) => {
             const Icon = service.icon
             return (
-              <Card key={index} className="border-2 hover:border-blue-500/20 transition-colors">
-                <CardHeader>
-                  <div className="mb-4">
-                    <Icon className={`h-10 w-10 ${service.color}`} />
-                  </div>
-                  <CardTitle>{service.title}</CardTitle>
-                  <CardDescription className="text-base">{service.description}</CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <div className="space-y-4">
-                    <div>
-                      <h4 className="font-medium mb-2">Use Cases:</h4>
-                      <ul className="list-disc list-inside text-sm text-muted-foreground space-y-1">
-                        {service.useCases.slice(0, 3).map((useCase, i) => (
-                          <li key={i}>{useCase}</li>
-                        ))}
-                      </ul>
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+              >
+                <Card className="group relative bg-white/80 backdrop-blur-sm hover:shadow-lg transition-all duration-300 border-2 hover:border-blue-500/20">
+                  <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-purple-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                  <CardHeader>
+                    <div className="mb-4">
+                      <div className="relative inline-block">
+                        <div className="absolute inset-0 bg-gradient-to-r from-blue-500/20 to-purple-500/20 blur-xl rounded-full group-hover:opacity-100 transition-opacity duration-300" />
+                        <Icon className={`h-10 w-10 ${service.color} relative z-10 group-hover:scale-110 transition-transform duration-300`} />
+                      </div>
                     </div>
-                    <Button asChild variant="outline" className="w-full">
-                      <Link href={`/services/${service.id}`}>
-                        Learn More
-                      </Link>
-                    </Button>
-                  </div>
-                </CardContent>
-              </Card>
+                    <CardTitle className="group-hover:text-blue-600 transition-colors">{service.title}</CardTitle>
+                    <CardDescription className="text-base">{service.description}</CardDescription>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="space-y-4">
+                      <div>
+                        <h4 className="font-medium mb-2">Use Cases:</h4>
+                        <ul className="list-disc list-inside text-sm text-muted-foreground space-y-1">
+                          {service.useCases.slice(0, 3).map((useCase, i) => (
+                            <li key={i}>{useCase}</li>
+                          ))}
+                        </ul>
+                      </div>
+                      <Button asChild variant="outline" className="w-full group-hover:bg-blue-500 group-hover:text-white transition-colors">
+                        <Link href={`/services/${service.id}`}>
+                          Learn More
+                        </Link>
+                      </Button>
+                    </div>
+                  </CardContent>
+                </Card>
+              </motion.div>
             )
           })}
         </div>
