@@ -1,10 +1,7 @@
 
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Clock, DollarSign, FileSpreadsheet, Target, Zap, Users } from "lucide-react"
-import { Button } from "@/components/ui/button"
-import Link from "next/link"
 import { motion } from "framer-motion"
-import { useRouter } from "next/router"
 
 export const services = [
   {
@@ -130,12 +127,6 @@ export const services = [
 ]
 
 export function Services() {
-  const router = useRouter()
-
-  const handleServiceClick = (serviceId: string) => {
-    router.push(`/services/${serviceId}`)
-  }
-
   return (
     <section id="services" className="py-20 bg-slate-50/50">
       <div className="container">
@@ -176,22 +167,13 @@ export function Services() {
                     <CardDescription className="text-base">{service.description}</CardDescription>
                   </CardHeader>
                   <CardContent>
-                    <div className="space-y-4">
-                      <div>
-                        <h4 className="font-medium mb-2">What You Get:</h4>
-                        <ul className="list-disc list-inside text-sm text-muted-foreground space-y-1">
-                          {service.useCases.slice(0, 3).map((useCase, i) => (
-                            <li key={i}>{useCase}</li>
-                          ))}
-                        </ul>
-                      </div>
-                      <Button 
-                        onClick={() => handleServiceClick(service.id)}
-                        variant="outline" 
-                        className="w-full group-hover:bg-blue-500 group-hover:text-white transition-colors"
-                      >
-                        See How It Works
-                      </Button>
+                    <div>
+                      <h4 className="font-medium mb-2">What You Get:</h4>
+                      <ul className="list-disc list-inside text-sm text-muted-foreground space-y-1">
+                        {service.useCases.slice(0, 3).map((useCase, i) => (
+                          <li key={i}>{useCase}</li>
+                        ))}
+                      </ul>
                     </div>
                   </CardContent>
                 </Card>
