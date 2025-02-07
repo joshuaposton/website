@@ -6,53 +6,53 @@ import { Badge } from "@/components/ui/badge"
 import { ArrowRight, CheckCircle2 } from "lucide-react"
 
 const serviceBenefits = {
-  "make-automation": [
-    "Seamless App Integration",
-    "Real-time Data Flow",
-    "Process Optimization",
-    "Reduced Manual Work",
-    "Scalable Workflows",
-    "Error Prevention"
+  "time-saving-automation": [
+    "Save 20+ Hours Weekly",
+    "Zero Manual Data Entry",
+    "Automatic Updates",
+    "Error-Free Operations",
+    "24/7 Automation",
+    "Instant Information Flow"
   ],
-  "airtable-development": [
-    "Centralized Data Management",
-    "Custom Workflows",
-    "Team Collaboration",
-    "Visual Analytics",
-    "Process Automation",
-    "Data Security"
+  "business-organization": [
+    "Everything in One Place",
+    "Real-time Updates",
+    "Easy Information Access",
+    "Paperless Operations",
+    "Smart Organization",
+    "Automatic Backups"
   ],
-  "excel-automation": [
+  "financial-automation": [
+    "Accurate Calculations",
+    "Automatic Reports",
+    "Error Prevention",
+    "Time Savings",
+    "Cost Reduction",
+    "Financial Clarity"
+  ],
+  "custom-solutions": [
+    "Tailored to Your Needs",
+    "Perfect Fit Solution",
+    "Future-Proof Systems",
+    "Scalable Design",
+    "Easy to Use",
+    "Full Support"
+  ],
+  "workflow-automation": [
+    "Faster Operations",
+    "Consistent Results",
+    "Quality Assurance",
     "Time Savings",
     "Error Reduction",
-    "Data Accuracy",
-    "Process Standardization",
-    "Enhanced Reporting",
-    "Resource Optimization"
+    "Easy Management"
   ],
-  "custom-automation": [
-    "Custom Automation",
-    "Data Processing Power",
-    "Scalable Solutions",
-    "Integration Capability",
-    "Performance Optimization",
-    "Advanced Analytics"
-  ],
-  "process-automation": [
-    "Workflow Optimization",
-    "Resource Efficiency",
-    "Quality Improvement",
-    "Cost Reduction",
-    "Compliance Management",
-    "Enhanced Productivity"
-  ],
-  "integration-services": [
-    "System Unification",
-    "Data Consistency",
-    "Process Streamlining",
+  "team-collaboration": [
+    "Better Communication",
+    "Task Automation",
+    "Team Efficiency",
     "Real-time Updates",
-    "Enhanced Efficiency",
-    "Scalable Architecture"
+    "Work Anywhere",
+    "Easy Coordination"
   ]
 }
 
