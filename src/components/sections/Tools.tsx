@@ -7,46 +7,46 @@ export function Tools() {
   const tools = [
     {
       name: "Business Database",
-      description: "A visual, easy-to-use system that keeps all your business information organized and accessible",
+      description: "Keep everything organized in one place - from customer details to inventory, all easily searchable and always up-to-date",
       icon: Table2,
       color: "text-blue-500",
       benefits: [
-        "No more scattered spreadsheets",
-        "Easy to update and maintain",
-        "Everything in one place"
+        "Find any information in seconds",
+        "Always accurate and up-to-date",
+        "Everything organized automatically"
       ]
     },
     {
       name: "Workflow Builder",
-      description: "Connect your favorite business tools and automate repetitive tasks with our visual workflow builder",
+      description: "Let your business run smoothly with automated tasks that work exactly how you want them to",
       icon: Workflow,
       color: "text-green-500",
       benefits: [
-        "No coding required",
-        "Visual drag-and-drop interface",
-        "Connect any business tool"
+        "Save hours on repetitive tasks",
+        "Everything happens automatically",
+        "Works with your favorite tools"
       ]
     },
     {
       name: "Smart Spreadsheets",
-      description: "Transform your existing spreadsheets into powerful, automated business tools",
+      description: "Keep using Excel while we add powerful automation to make it work harder for your business",
       icon: Boxes,
       color: "text-purple-500",
       benefits: [
-        "Keep using familiar tools",
-        "Add automation power",
-        "Reduce manual work"
+        "Stay with familiar tools",
+        "Automatic calculations",
+        "No more manual updates"
       ]
     },
     {
       name: "Custom Solutions",
-      description: "When you need something special, we create custom automation solutions just for your business",
+      description: "Get exactly what your business needs - custom automation that grows with you",
       icon: Code2,
       color: "text-indigo-500",
       benefits: [
-        "Tailored to your needs",
-        "Built for your industry",
-        "Grows with your business"
+        "Built just for your business",
+        "Adapts as you grow",
+        "Works exactly how you need"
       ]
     }
   ]
@@ -61,10 +61,10 @@ export function Tools() {
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
         >
-          <h2 className="text-3xl font-bold tracking-tight mb-4">Our Business Tools</h2>
+          <h2 className="text-3xl font-bold tracking-tight mb-4">Business-Friendly Tools</h2>
           <p className="text-xl text-muted-foreground max-w-[800px] mx-auto">
-            We use powerful, business-friendly tools to automate your work. Don't worry about the technical details - 
-            we handle everything while you enjoy the benefits.
+            We use reliable, proven tools to automate your business tasks. You focus on running your business - 
+            we will handle making everything work together smoothly.
           </p>
         </motion.div>
 
