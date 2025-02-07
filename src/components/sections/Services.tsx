@@ -1,129 +1,129 @@
 
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Workflow, Table2, FileSpreadsheet, Code2, Bot, Laptop } from "lucide-react"
+import { Clock, DollarSign, FileSpreadsheet, Target, Zap, Users } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
 import { motion } from "framer-motion"
 
 export const services = [
   {
-    id: "make-automation",
-    title: "Make.com Automation",
-    description: "Create powerful automated workflows connecting your favorite apps and services",
-    icon: Workflow,
+    id: "time-saving-automation",
+    title: "Time-Saving Solutions",
+    description: "Stop spending hours on manual data entry. Our automation tools do the work for you!",
+    icon: Clock,
     color: "text-blue-500",
     useCases: [
-      "Automated lead capture from multiple sources",
-      "Customer data synchronization across platforms",
-      "Invoice and payment processing automation",
-      "Social media content scheduling and posting",
-      "Email marketing automation and tracking"
+      "Turn 4 hours of data entry into a 5-minute task",
+      "Automatically sync customer info across all your tools",
+      "Send invoices and follow-ups automatically",
+      "Schedule social media posts in advance",
+      "Automate your email marketing campaigns"
     ],
     examples: [
-      "CRM integration with email marketing platforms",
-      "Automated customer onboarding workflows",
-      "Real-time data synchronization between systems",
-      "Custom notification systems for team collaboration"
+      "Customer details instantly updated everywhere",
+      "New leads automatically added to your system",
+      "Invoices generated and sent automatically",
+      "Customer support responses automated"
     ]
   },
   {
-    id: "airtable-development",
-    title: "Airtable Development",
-    description: "Custom Airtable solutions for efficient data management and collaboration",
-    icon: Table2,
+    id: "business-organization",
+    title: "Business Organization",
+    description: "Keep all your business information organized and accessible in one place",
+    icon: Target,
     color: "text-cyan-500",
     useCases: [
-      "Project management and task tracking",
-      "Inventory management systems",
-      "Customer relationship management",
-      "Content calendar management",
-      "Team collaboration and resource planning"
+      "Track all your projects in one simple dashboard",
+      "Never lose track of inventory again",
+      "Keep customer information up-to-date automatically",
+      "Manage your content calendar effortlessly",
+      "Coordinate your team without endless emails"
     ],
     examples: [
-      "Custom views and dashboards for analytics",
-      "Automated data entry and validation",
-      "Integration with external systems",
-      "Customized reporting solutions"
+      "Real-time inventory tracking dashboard",
+      "Automated customer database updates",
+      "Team tasks automatically assigned",
+      "Custom reports sent to your inbox"
     ]
   },
   {
-    id: "excel-automation",
-    title: "Excel Automation",
-    description: "Streamline your Excel workflows with VBA and Python automation",
-    icon: FileSpreadsheet,
+    id: "financial-automation",
+    title: "Financial Management",
+    description: "Save time and reduce errors in your financial processes",
+    icon: DollarSign,
     color: "text-emerald-500",
     useCases: [
-      "Financial reporting automation",
-      "Data analysis and visualization",
-      "Inventory tracking systems",
-      "Sales reporting and forecasting",
-      "Employee scheduling and time tracking"
+      "Generate financial reports automatically",
+      "Track expenses without spreadsheet headaches",
+      "Automate invoice creation and sending",
+      "Monitor sales and revenue in real-time",
+      "Simplify payroll and time tracking"
     ],
     examples: [
-      "Automated monthly financial reports",
-      "Custom data processing macros",
-      "Interactive dashboards with real-time updates",
-      "Automated data validation and cleaning"
+      "Monthly reports created automatically",
+      "Expenses categorized instantly",
+      "Sales dashboard always up-to-date",
+      "Payroll calculated automatically"
     ]
   },
   {
-    id: "custom-automation",
-    title: "Custom Automation Solutions",
-    description: "Advanced automation solutions tailored to your unique business needs",
-    icon: Code2,
+    id: "custom-solutions",
+    title: "Custom Business Solutions",
+    description: "Get a solution that fits your unique business needs perfectly",
+    icon: Zap,
     color: "text-indigo-500",
     useCases: [
-      "Complex workflow automation",
-      "Custom business applications",
-      "Data processing and analytics",
-      "System integration and APIs",
-      "Automated reporting solutions"
+      "Streamline your specific business processes",
+      "Connect all your favorite tools",
+      "Automate unique industry workflows",
+      "Create custom reports automatically",
+      "Build your perfect business system"
     ],
     examples: [
-      "End-to-end business process automation",
-      "Custom business intelligence tools",
-      "Automated data processing systems",
-      "Integration middleware development"
+      "Your entire workflow automated",
+      "Custom reporting dashboard",
+      "Industry-specific solutions",
+      "Unique process automation"
     ]
   },
   {
-    id: "process-automation",
-    title: "Process Automation",
-    description: "Identify and automate repetitive tasks to boost productivity",
-    icon: Bot,
+    id: "workflow-automation",
+    title: "Smart Workflows",
+    description: "Let automation handle your repetitive daily tasks",
+    icon: FileSpreadsheet,
     color: "text-violet-500",
     useCases: [
-      "Document processing and management",
-      "Approval workflow automation",
-      "Data entry and validation",
-      "Customer service automation",
-      "HR process automation"
+      "Turn manual processes into automatic ones",
+      "Speed up document processing",
+      "Automate approval processes",
+      "Handle customer service automatically",
+      "Streamline HR tasks"
     ],
     examples: [
-      "Automated document generation and filing",
-      "Employee onboarding workflows",
-      "Customer support ticket automation",
-      "Automated data backup systems"
+      "Documents processed automatically",
+      "New hire paperwork automated",
+      "Customer support streamlined",
+      "Data backed up automatically"
     ]
   },
   {
-    id: "integration-services",
-    title: "Integration Services",
-    description: "Seamlessly connect your business tools and applications",
-    icon: Laptop,
+    id: "team-collaboration",
+    title: "Team Productivity",
+    description: "Help your team work smarter, not harder",
+    icon: Users,
     color: "text-purple-500",
     useCases: [
-      "Cross-platform data synchronization",
-      "E-commerce platform integration",
-      "Payment gateway integration",
-      "CRM and marketing tool integration",
-      "Custom API development"
+      "Keep everyone in sync automatically",
+      "Connect your online store to accounting",
+      "Streamline team communication",
+      "Automate task assignments",
+      "Track project progress easily"
     ],
     examples: [
-      "E-commerce and accounting system integration",
-      "CRM and email marketing platform connection",
-      "Custom API development for legacy systems",
-      "Multi-platform data synchronization"
+      "Automated task management",
+      "Team updates sent automatically",
+      "Project timelines tracked easily",
+      "Resources allocated efficiently"
     ]
   }
 ]
@@ -139,10 +139,10 @@ export function Services() {
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
         >
-          <h2 className="text-3xl font-bold tracking-tight mb-4">Our Services</h2>
+          <h2 className="text-3xl font-bold tracking-tight mb-4">How We Can Help</h2>
           <p className="text-xl text-muted-foreground max-w-[800px] mx-auto">
-            We help small businesses streamline their operations with custom automation solutions.
-            Transform your workflow with our specialized services.
+            Let us handle the technical stuff while you focus on growing your business. 
+            Our solutions are designed to make your life easier and your business more profitable.
           </p>
         </motion.div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -171,7 +171,7 @@ export function Services() {
                   <CardContent>
                     <div className="space-y-4">
                       <div>
-                        <h4 className="font-medium mb-2">Use Cases:</h4>
+                        <h4 className="font-medium mb-2">What You Get:</h4>
                         <ul className="list-disc list-inside text-sm text-muted-foreground space-y-1">
                           {service.useCases.slice(0, 3).map((useCase, i) => (
                             <li key={i}>{useCase}</li>
@@ -180,7 +180,7 @@ export function Services() {
                       </div>
                       <Button asChild variant="outline" className="w-full group-hover:bg-blue-500 group-hover:text-white transition-colors">
                         <Link href={`/services/${service.id}`}>
-                          Learn More
+                          See How It Works
                         </Link>
                       </Button>
                     </div>

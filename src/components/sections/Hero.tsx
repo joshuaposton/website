@@ -1,16 +1,16 @@
 
 import { Button } from "@/components/ui/button"
-import { ArrowRight, Workflow, Database, Code, Sparkles, Cpu, Globe } from "lucide-react"
+import { ArrowRight, Clock, DollarSign, Sparkles, Shield, Heart, Target } from "lucide-react"
 import { motion } from "framer-motion"
 
 export function Hero() {
   const floatingIcons = [
-    { Icon: Workflow, color: "text-blue-500", delay: 0 },
-    { Icon: Database, color: "text-cyan-500", delay: 0.2 },
-    { Icon: Code, color: "text-indigo-500", delay: 0.4 },
-    { Icon: Sparkles, color: "text-purple-500", delay: 0.6 },
-    { Icon: Cpu, color: "text-pink-500", delay: 0.8 },
-    { Icon: Globe, color: "text-green-500", delay: 1 }
+    { Icon: Clock, color: "text-blue-500", delay: 0 },
+    { Icon: DollarSign, color: "text-green-500", delay: 0.2 },
+    { Icon: Sparkles, color: "text-purple-500", delay: 0.4 },
+    { Icon: Shield, color: "text-red-500", delay: 0.6 },
+    { Icon: Heart, color: "text-pink-500", delay: 0.8 },
+    { Icon: Target, color: "text-indigo-500", delay: 1 }
   ]
 
   return (
@@ -64,9 +64,9 @@ export function Hero() {
             }}
           />
           <div className="relative flex space-x-4 mb-8">
-            <Workflow className="h-12 w-12 text-blue-500" />
-            <Database className="h-12 w-12 text-cyan-500" />
-            <Code className="h-12 w-12 text-indigo-500" />
+            <Clock className="h-12 w-12 text-blue-500" />
+            <DollarSign className="h-12 w-12 text-green-500" />
+            <Heart className="h-12 w-12 text-pink-500" />
           </div>
         </div>
 
@@ -77,14 +77,13 @@ export function Hero() {
           transition={{ delay: 0.2, duration: 0.8 }}
         >
           <h1 className="text-4xl md:text-6xl font-bold tracking-tight text-center">
-            Innovate. Automate. Dominate.
+            Save Time. Cut Costs.<br />Grow Your Business.
           </h1>
           
           <p className="text-xl text-muted-foreground leading-relaxed">
-            At EchoFlow Labs, we ignite innovation for small businesses through intelligent automation. 
-            With our mastery in Make.com, Excel, Python, and Airtable, we design smart solutions that 
-            optimize workflows, enhance efficiency, and drive sustainable growth. Experience the power 
-            of technology tailored to transform your business!
+            Tired of spending hours on repetitive tasks? We help small businesses like yours 
+            save 20+ hours per week by automating your daily operations. No technical expertise needed - 
+            we handle everything while you focus on growing your business.
           </p>
         </motion.div>
 
@@ -95,10 +94,10 @@ export function Hero() {
           transition={{ delay: 0.6, duration: 0.8 }}
         >
           <Button size="lg" className="gap-2 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700">
-            Get Started <ArrowRight className="h-4 w-4" />
+            Book a Free Consultation <ArrowRight className="h-4 w-4" />
           </Button>
           <Button size="lg" variant="outline" className="border-2">
-            View Our Services
+            See Success Stories
           </Button>
         </motion.div>
       </motion.div>
