@@ -4,6 +4,7 @@ import { Clock, DollarSign, FileSpreadsheet, Target, Zap, Users } from "lucide-r
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
 import { motion } from "framer-motion"
+import { useRouter } from "next/router"
 
 export const services = [
   {
@@ -129,6 +130,12 @@ export const services = [
 ]
 
 export function Services() {
+  const router = useRouter()
+
+  const handleServiceClick = (serviceId: string) => {
+    router.push(`/services/${serviceId}`)
+  }
+
   return (
     <section id="services" className="py-20 bg-slate-50/50">
       <div className="container">
@@ -178,10 +185,12 @@ export function Services() {
                           ))}
                         </ul>
                       </div>
-                      <Button asChild variant="outline" className="w-full group-hover:bg-blue-500 group-hover:text-white transition-colors">
-                        <Link href={`/services/${service.id}`}>
-                          See How It Works
-                        </Link>
+                      <Button 
+                        onClick={() => handleServiceClick(service.id)}
+                        variant="outline" 
+                        className="w-full group-hover:bg-blue-500 group-hover:text-white transition-colors"
+                      >
+                        See How It Works
                       </Button>
                     </div>
                   </CardContent>
