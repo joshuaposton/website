@@ -2,11 +2,9 @@
 import Head from "next/head"
 import { Navbar } from "@/components/layout/Navbar"
 import { Card, CardContent } from "@/components/ui/card"
-import { Building2, Code, Users, Workflow, FileSpreadsheet, Database, Bot, Laptop, ArrowRight, Boxes, Brain, Gauge, MapPin, Heart, Building, Store, Phone, Mail } from "lucide-react"
+import { Building2, Code, Users, Workflow, FileSpreadsheet, Database, Bot, Laptop, Boxes, Brain, Gauge, MapPin, Heart, Building, Store, Phone, Mail } from "lucide-react"
 import { motion } from "framer-motion"
 import { Separator } from "@/components/ui/separator"
-import Link from "next/link"
-import { Button } from "@/components/ui/button"
 
 export default function AboutPage() {
   const techStack = [
@@ -165,15 +163,6 @@ export default function AboutPage() {
                     )
                   })}
                 </div>
-              </motion.div>
-
-              <motion.div className="text-center mb-24">
-                <Button size="lg" asChild className="bg-blue-600 hover:bg-blue-700">
-                  <Link href="/contact">
-                    Get in Touch
-                    <ArrowRight className="ml-2 h-4 w-4" />
-                  </Link>
-                </Button>
               </motion.div>
 
               <Separator className="my-16" />

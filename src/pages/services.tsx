@@ -2,9 +2,6 @@
 import Head from "next/head"
 import { Navbar } from "@/components/layout/Navbar"
 import { ServiceDetails } from "@/components/sections/ServiceDetails"
-import { Button } from "@/components/ui/button"
-import Link from "next/link"
-import { ArrowRight } from "lucide-react"
 
 export default function ServicesPage() {
   return (
@@ -23,15 +20,9 @@ export default function ServicesPage() {
                 <h1 className="text-4xl font-bold tracking-tight mb-6">
                   Automation Solutions
                 </h1>
-                <p className="text-xl text-muted-foreground mb-8">
+                <p className="text-xl text-muted-foreground">
                   Dive deep into our comprehensive suite of automation services. Each solution is carefully crafted to transform your business operations and drive efficiency.
                 </p>
-                <Button size="lg" asChild className="bg-blue-600 hover:bg-blue-700">
-                  <Link href="/get-started">
-                    Schedule a Free Consultation
-                    <ArrowRight className="ml-2 h-4 w-4" />
-                  </Link>
-                </Button>
               </div>
             </div>
           </section>
