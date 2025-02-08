@@ -1,39 +1,10 @@
 
 import Head from "next/head"
 import { Navbar } from "@/components/layout/Navbar"
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Input } from "@/components/ui/input"
-import { Textarea } from "@/components/ui/textarea"
-import { Button } from "@/components/ui/button"
+import { Card, CardContent } from "@/components/ui/card"
 import { Mail, MessageSquare, Phone } from "lucide-react"
-import { useState } from "react"
-import { sendEmail } from "@/lib/email"
-import { Toaster } from "@/components/ui/sonner"
 
 export default function ContactPage() {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    subject: "",
-    message: ""
-  })
-  const [isSubmitting, setIsSubmitting] = useState(false)
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault()
-    setIsSubmitting(true)
-    await sendEmail(formData)
-    setIsSubmitting(false)
-    setFormData({ name: "", email: "", subject: "", message: "" })
-  }
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setFormData(prev => ({
-      ...prev,
-      [e.target.name]: e.target.value
-    }))
-  }
-
   return (
     <>
       <Head>
@@ -53,7 +24,7 @@ export default function ContactPage() {
                 </p>
               </div>
               
-              <div className="grid md:grid-cols-3 gap-8 mb-12">
+              <div className="grid md:grid-cols-3 gap-8">
                 <Card className="text-center">
                   <CardContent className="pt-6">
                     <Mail className="h-8 w-8 mb-4 mx-auto text-blue-500" />
@@ -84,72 +55,9 @@ export default function ContactPage() {
                   </CardContent>
                 </Card>
               </div>
-              
-              <Card>
-                <CardHeader>
-                  <CardTitle>Send a Message</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <form onSubmit={handleSubmit} className="space-y-6">
-                    <div className="grid md:grid-cols-2 gap-4">
-                      <div className="space-y-2">
-                        <label className="text-sm font-medium">Name</label>
-                        <Input 
-                          name="name"
-                          value={formData.name}
-                          onChange={handleChange}
-                          placeholder="Your name" 
-                          required
-                        />
-                      </div>
-                      <div className="space-y-2">
-                        <label className="text-sm font-medium">Email</label>
-                        <Input 
-                          name="email"
-                          type="email" 
-                          value={formData.email}
-                          onChange={handleChange}
-                          placeholder="your@email.com" 
-                          required
-                        />
-                      </div>
-                    </div>
-                    <div className="space-y-2">
-                      <label className="text-sm font-medium">Subject</label>
-                      <Input 
-                        name="subject"
-                        value={formData.subject}
-                        onChange={handleChange}
-                        placeholder="How can we help?" 
-                        required
-                      />
-                    </div>
-                    <div className="space-y-2">
-                      <label className="text-sm font-medium">Message</label>
-                      <Textarea 
-                        name="message"
-                        value={formData.message}
-                        onChange={handleChange}
-                        placeholder="Tell us about your project..." 
-                        className="min-h-[150px]" 
-                        required
-                      />
-                    </div>
-                    <Button 
-                      type="submit" 
-                      size="lg" 
-                      className="w-full md:w-auto"
-                      disabled={isSubmitting}
-                    >
-                      {isSubmitting ? "Sending..." : "Send Message"}
-                    </Button>
-                  </form>
-                </CardContent>
-              </Card>
             </div>
           </section>
         </main>
-        <Toaster />
       </div>
     </>
   )
