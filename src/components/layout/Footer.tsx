@@ -6,10 +6,12 @@ import { motion } from "framer-motion"
 export function Footer() {
   const footerLinks = {
     Services: [
-      { name: "Make.com Automation", href: "/services/make-automation" },
-      { name: "Airtable Development", href: "/services/airtable-development" },
-      { name: "Excel Automation", href: "/services/excel-automation" },
-      { name: "Custom Solutions", href: "/services/custom-automation" }
+      { name: "Time-Saving Solutions", href: "/services#time-saving-automation" },
+      { name: "Business Organization", href: "/services#business-organization" },
+      { name: "Financial Management", href: "/services#financial-automation" },
+      { name: "Custom Business Solutions", href: "/services#custom-solutions" },
+      { name: "Smart Workflows", href: "/services#workflow-automation" },
+      { name: "Team Productivity", href: "/services#team-collaboration" }
     ],
     Resources: [
       { name: "Quick Start Guides", href: "/resources/quick-start" },
