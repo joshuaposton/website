@@ -2,9 +2,11 @@
 import Head from "next/head"
 import { Navbar } from "@/components/layout/Navbar"
 import { Card, CardContent } from "@/components/ui/card"
-import { Building2, Code, Users, Workflow, FileSpreadsheet, Database, Bot, Laptop, ArrowRight, Boxes, Brain, Gauge, MapPin, Heart, Building, Store } from "lucide-react"
+import { Building2, Code, Users, Workflow, FileSpreadsheet, Database, Bot, Laptop, ArrowRight, Boxes, Brain, Gauge, MapPin, Heart, Building, Store, Phone, Mail } from "lucide-react"
 import { motion } from "framer-motion"
 import { Separator } from "@/components/ui/separator"
+import Link from "next/link"
+import { Button } from "@/components/ui/button"
 
 export default function AboutPage() {
   const techStack = [
@@ -41,17 +43,17 @@ export default function AboutPage() {
     {
       icon: Store,
       title: "Local Business Focus",
-      description: "Deep understanding of Alexandria's business community and unique market needs"
+      description: "As a proud Alexandria native, we understand the unique challenges facing Central Louisiana businesses and provide tailored solutions that work for our community."
     },
     {
       icon: Building,
-      title: "Community Roots",
-      description: "Proud member of the Alexandria business community, serving Central Louisiana"
+      title: "Deep Community Roots",
+      description: "Born and raised in Alexandria, we&apos;re committed to helping local businesses thrive. Our deep understanding of the CENLA market helps us deliver solutions that truly work for our region."
     },
     {
       icon: Heart,
-      title: "Community Investment",
-      description: "Committed to helping local businesses thrive through modern automation solutions"
+      title: "Local Support & Service",
+      description: "We offer personalized, face-to-face support right here in Alexandria. No outsourcing or long-distance relationships - just reliable, local service you can count on."
     }
   ]
 
@@ -75,47 +77,48 @@ export default function AboutPage() {
               >
                 <div>
                   <h1 className="text-4xl font-bold tracking-tight mb-6">
-                    Revolutionizing Business Operations with Cutting-Edge Automation
+                    Your Local Business Automation Partner in Alexandria
                   </h1>
                   <p className="text-xl text-muted-foreground">
-                    At EchoFlow Labs, we ignite innovation for small businesses through intelligent automation. 
-                    With our mastery in Make.com, Excel, Python, and Airtable, we design smart solutions that 
-                    optimize workflows, enhance efficiency, and drive sustainable growth. Experience the power 
-                    of technology tailored to transform your business!
+                    At EchoFlow Labs, we bring Silicon Valley technology to Central Louisiana businesses. 
+                    Based in Alexandria, we understand the unique challenges local businesses face and provide 
+                    personalized automation solutions that drive real results for our community.
                   </p>
                 </div>
                 <Card>
                   <CardContent className="p-6">
-                    <h2 className="text-2xl font-semibold mb-4">Our Commitment</h2>
+                    <h2 className="text-2xl font-semibold mb-4">Our Local Commitment</h2>
                     <p className="text-muted-foreground mb-6">
-                      EchoFlow Labs was established with a clear purpose: making powerful automation solutions accessible to small businesses. By combining technical expertise with deep business insights, we help organizations save time, reduce errors, and focus on strategic growth.
+                      As an Alexandria native, I founded EchoFlow Labs with a mission to help local businesses thrive 
+                      through modern automation. We combine our technical expertise with a deep understanding of the 
+                      Central Louisiana business landscape to deliver solutions that truly work for our community.
                     </p>
                     <div className="space-y-4">
                       <div className="flex items-center space-x-4">
                         <div className="h-10 w-10 rounded-full bg-blue-100 flex items-center justify-center">
-                          <Building2 className="h-6 w-6 text-blue-600" />
+                          <Mail className="h-6 w-6 text-blue-600" />
                         </div>
                         <div>
-                          <h3 className="font-medium">Industry Experience</h3>
-                          <p className="text-sm text-muted-foreground">Deep understanding of small business needs</p>
+                          <h3 className="font-medium">Email</h3>
+                          <p className="text-sm text-muted-foreground">josh@echoflowlabs.com</p>
                         </div>
                       </div>
                       <div className="flex items-center space-x-4">
                         <div className="h-10 w-10 rounded-full bg-blue-100 flex items-center justify-center">
-                          <Code className="h-6 w-6 text-blue-600" />
+                          <Phone className="h-6 w-6 text-blue-600" />
                         </div>
                         <div>
-                          <h3 className="font-medium">Technical Excellence</h3>
-                          <p className="text-sm text-muted-foreground">Expertise in leading automation platforms</p>
+                          <h3 className="font-medium">Phone</h3>
+                          <p className="text-sm text-muted-foreground">(318) 419-5264</p>
                         </div>
                       </div>
                       <div className="flex items-center space-x-4">
                         <div className="h-10 w-10 rounded-full bg-blue-100 flex items-center justify-center">
-                          <Users className="h-6 w-6 text-blue-600" />
+                          <MapPin className="h-6 w-6 text-blue-600" />
                         </div>
                         <div>
-                          <h3 className="font-medium">Client-Focused Approach</h3>
-                          <p className="text-sm text-muted-foreground">Dedicated support and collaboration</p>
+                          <h3 className="font-medium">Location</h3>
+                          <p className="text-sm text-muted-foreground">Alexandria, Louisiana</p>
                         </div>
                       </div>
                     </div>
@@ -135,12 +138,12 @@ export default function AboutPage() {
                 <div className="text-center mb-12">
                   <div className="flex items-center justify-center gap-2 mb-4">
                     <MapPin className="h-6 w-6 text-blue-600" />
-                    <h2 className="text-3xl font-bold tracking-tight">Our Alexandria Roots</h2>
+                    <h2 className="text-3xl font-bold tracking-tight">Serving Central Louisiana</h2>
                   </div>
                   <p className="text-xl text-muted-foreground max-w-[800px] mx-auto">
-                    Proudly based in Alexandria, Louisiana, we understand the unique challenges and opportunities 
-                    facing Central Louisiana businesses. Our local presence allows us to provide personalized 
-                    service while delivering world-class automation solutions.
+                    As lifelong residents of Alexandria, we&apos;re deeply invested in our community&apos;s success. 
+                    We understand the unique challenges and opportunities in Central Louisiana, and we&apos;re here 
+                    to help local businesses thrive with personalized automation solutions.
                   </p>
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -164,70 +167,16 @@ export default function AboutPage() {
                 </div>
               </motion.div>
 
-              <Separator className="my-16" />
-
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.8 }}
-                className="mb-24"
-              >
-                <h2 className="text-3xl font-bold tracking-tight mb-12 text-center">Our Technology Stack</h2>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                  {techStack.map((tech, index) => {
-                    const Icon = tech.icon
-                    return (
-                      <Card key={index} className="group hover:shadow-lg transition-all duration-300">
-                        <CardContent className="p-6">
-                          <div className="mb-4 relative">
-                            <div className="absolute inset-0 bg-blue-500/10 rounded-full blur-xl group-hover:bg-blue-500/20 transition-colors" />
-                            <div className="relative z-10">
-                              <Icon className="h-12 w-12 text-blue-600" />
-                            </div>
-                          </div>
-                          <h3 className="text-xl font-semibold mb-2">{tech.name}</h3>
-                          <p className="text-muted-foreground">{tech.description}</p>
-                        </CardContent>
-                      </Card>
-                    )
-                  })}
-                </div>
+              <motion.div className="text-center mb-24">
+                <Button size="lg" asChild className="bg-blue-600 hover:bg-blue-700">
+                  <Link href="/contact">
+                    Get in Touch
+                    <ArrowRight className="ml-2 h-4 w-4" />
+                  </Link>
+                </Button>
               </motion.div>
 
               <Separator className="my-16" />
-
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.8 }}
-              >
-                <h2 className="text-3xl font-bold tracking-tight mb-12 text-center">Our Process</h2>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                  {processSteps.map((step, index) => {
-                    const Icon = step.icon
-                    return (
-                      <div key={index} className="relative">
-                        {index < processSteps.length - 1 && (
-                          <div className="hidden lg:block absolute top-8 left-[60%] w-full h-0.5 bg-gradient-to-r from-blue-500/20 to-transparent" />
-                        )}
-                        <Card className="relative bg-white/80 backdrop-blur-sm">
-                          <CardContent className="pt-6">
-                            <div className="mb-4">
-                              <div className="h-16 w-16 rounded-full bg-blue-100 flex items-center justify-center mb-4">
-                                <Icon className="h-8 w-8 text-blue-600" />
-                              </div>
-                              <h3 className="text-xl font-semibold mb-2">{step.title}</h3>
-                              <p className="text-muted-foreground">{step.description}</p>
-                            </div>
-                          </CardContent>
-                        </Card>
-                      </div>
-                    )
-                  })}
-                </div>
-              </motion.div>
             </div>
           </section>
         </main>
