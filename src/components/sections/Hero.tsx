@@ -1,6 +1,6 @@
 
 import { Button } from "@/components/ui/button"
-import { ArrowRight, Clock, DollarSign, Sparkles, Shield, Heart, Target } from "lucide-react"
+import { Clock, DollarSign, Sparkles, Shield, Heart, Target } from "lucide-react"
 import { motion } from "framer-motion"
 
 export function Hero() {
@@ -93,9 +93,6 @@ export function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.6, duration: 0.8 }}
         >
-          <Button size="lg" className="gap-2 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700">
-            Book a Free Consultation <ArrowRight className="h-4 w-4" />
-          </Button>
           <Button size="lg" variant="outline" className="border-2">
             See Success Stories
           </Button>
