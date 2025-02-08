@@ -1,6 +1,5 @@
 
-import { Button } from "@/components/ui/button"
-import Link from "next/link"
+import { Link } from "next/link"
 import { Logo } from "@/components/layout/Logo"
 
 export function Navbar() {
@@ -23,9 +22,6 @@ export function Navbar() {
           <Link href="/contact" className="text-foreground/60 hover:text-foreground transition-colors">
             Contact
           </Link>
-          <Button asChild>
-            <Link href="/get-started">Get Started</Link>
-          </Button>
         </div>
       </div>
     </nav>
