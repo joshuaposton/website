@@ -77,13 +77,13 @@ export function Hero() {
           transition={{ delay: 0.2, duration: 0.8 }}
         >
           <h1 className="text-4xl md:text-6xl font-bold tracking-tight text-center">
-            Save Time. Cut Costs.<br />Grow Your Business.
+            Transform Your Business Through<br />Process Automation
           </h1>
           
           <p className="text-xl text-muted-foreground leading-relaxed">
-            Tired of spending hours on repetitive tasks? We help small businesses like yours 
-            save 20+ hours per week by automating your daily operations. No technical expertise needed - 
-            we handle everything while you focus on growing your business.
+            Revolutionize your operations with powerful business process automation and workflow automation solutions. 
+            We help small businesses achieve process improvement that saves 20+ hours per week through intelligent automation. 
+            No technical expertise needed - we handle the complexity while you focus on growth.
           </p>
         </motion.div>
       </motion.div>

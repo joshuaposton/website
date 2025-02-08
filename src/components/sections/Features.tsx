@@ -6,32 +6,32 @@ import { motion } from "framer-motion"
 export function Features() {
   const features = [
     {
-      title: "Boost Efficiency",
-      description: "Save hours of manual work with smart automation workflows that handle repetitive tasks",
+      title: "Business Process Automation",
+      description: "Transform your operations with intelligent automation that streamlines workflows and eliminates manual tasks",
       icon: Zap,
       color: "text-yellow-500",
       gradient: "from-yellow-500 to-orange-500",
       metric: "Up to 80% time savings"
     },
     {
-      title: "Real-time Operations",
-      description: "Monitor and manage your business processes in real-time with automated tracking",
+      title: "Workflow Automation",
+      description: "Implement automated workflows that optimize your business processes and enhance operational efficiency",
       icon: Clock,
       color: "text-blue-500",
       gradient: "from-blue-500 to-cyan-500",
-      metric: "24/7 automated workflows"
+      metric: "24/7 automated processes"
     },
     {
-      title: "Cost Reduction",
-      description: "Minimize operational costs by automating manual processes and reducing human error",
+      title: "Process Improvement",
+      description: "Continuously optimize and enhance your business processes through data-driven automation solutions",
       icon: DollarSign,
       color: "text-green-500",
       gradient: "from-green-500 to-emerald-500",
-      metric: "Reduce costs by 60%"
+      metric: "60% efficiency boost"
     },
     {
       title: "Data-Driven Insights",
-      description: "Get valuable insights from automated data collection and analysis",
+      description: "Leverage automated analytics to drive continuous process improvement and operational excellence",
       icon: BarChart,
       color: "text-purple-500",
       gradient: "from-purple-500 to-pink-500",
@@ -39,7 +39,7 @@ export function Features() {
     },
     {
       title: "Secure & Reliable",
-      description: "Enterprise-grade security with automated backups and error handling",
+      description: "Enterprise-grade security for your automated business processes with reliable backup systems",
       icon: Shield,
       color: "text-red-500",
       gradient: "from-red-500 to-rose-500",
@@ -47,7 +47,7 @@ export function Features() {
     },
     {
       title: "Custom Solutions",
-      description: "Tailored automation solutions designed specifically for your business needs",
+      description: "Tailored workflow automation solutions designed specifically for your unique business needs",
       icon: Sparkles,
       color: "text-indigo-500",
       gradient: "from-indigo-500 to-violet-500",
@@ -68,10 +68,10 @@ export function Features() {
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
         >
-          <h2 className="text-3xl font-bold tracking-tight mb-4">Why Choose Us</h2>
+          <h2 className="text-3xl font-bold tracking-tight mb-4">Transform Your Business Operations</h2>
           <p className="text-xl text-muted-foreground max-w-[800px] mx-auto">
-            Transform your business operations with powerful automation solutions that save time,
-            reduce costs, and drive growth.
+            Elevate your business with comprehensive process automation solutions that drive efficiency,
+            reduce costs, and accelerate growth through continuous process improvement.
           </p>
         </motion.div>
 
