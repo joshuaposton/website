@@ -86,17 +86,6 @@ export function Hero() {
             we handle everything while you focus on growing your business.
           </p>
         </motion.div>
-
-        <motion.div 
-          className="flex flex-col sm:flex-row gap-4 w-full justify-center mt-12"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.6, duration: 0.8 }}
-        >
-          <Button size="lg" variant="outline" className="border-2">
-            See Success Stories
-          </Button>
-        </motion.div>
       </motion.div>
     </div>
   )
