@@ -10,17 +10,17 @@ export default function ResourcesPage() {
   const quickGuides = [
     {
       title: "Workflow Analysis",
-      description: "Learn how to analyze and optimize your current business workflows",
+      description: "Learn how to analyze and optimize your current business workflows for maximum efficiency",
       slug: "workflow-analysis"
     },
     {
       title: "Integration Planning",
-      description: "Step-by-step guide to planning successful automation integrations",
+      description: "Comprehensive guide to planning successful business process automation integrations",
       slug: "integration-planning"
     },
     {
       title: "ROI Calculation",
-      description: "Calculate the return on investment for your automation projects",
+      description: "Calculate and maximize the return on investment for your workflow automation projects",
       slug: "roi-calculation"
     }
   ]
@@ -28,10 +28,14 @@ export default function ResourcesPage() {
   return (
     <>
       <Head>
-        <title>Resources & Guides | EchoFlow Labs</title>
+        <title>Business Process Automation Resources & Guides | Workflow Automation Expertise</title>
         <meta 
           name="description" 
-          content="Explore our comprehensive guides and resources about business process automation, technical implementations, and best practices." 
+          content="Explore comprehensive resources about business process automation, workflow automation, and process improvement. Expert guides, best practices, and implementation strategies." 
+        />
+        <meta 
+          name="keywords" 
+          content="business process automation, workflow automation, process improvement, automation guides, ROI calculation, integration planning" 
         />
       </Head>
 
@@ -41,10 +45,10 @@ export default function ResourcesPage() {
           <div className="container mx-auto px-4 py-8">
             <div className="text-center mb-12">
               <h1 className="text-4xl font-bold tracking-tight mb-4">
-                Automation Resources Hub
+                Business Process Automation Resources
               </h1>
               <p className="text-xl text-muted-foreground">
-                Your gateway to mastering business process automation
+                Expert guides and resources for workflow automation and process improvement
               </p>
             </div>
 
