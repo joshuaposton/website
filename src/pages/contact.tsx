@@ -6,8 +6,34 @@ import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Button } from "@/components/ui/button"
 import { Mail, MessageSquare, Phone } from "lucide-react"
+import { useState } from "react"
+import { sendEmail } from "@/lib/email"
+import { Toaster } from "@/components/ui/sonner"
 
 export default function ContactPage() {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    subject: "",
+    message: ""
+  })
+  const [isSubmitting, setIsSubmitting] = useState(false)
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault()
+    setIsSubmitting(true)
+    await sendEmail(formData)
+    setIsSubmitting(false)
+    setFormData({ name: "", email: "", subject: "", message: "" })
+  }
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    setFormData(prev => ({
+      ...prev,
+      [e.target.name]: e.target.value
+    }))
+  }
+
   return (
     <>
       <Head>
@@ -33,7 +59,7 @@ export default function ContactPage() {
                     <Mail className="h-8 w-8 mb-4 mx-auto text-blue-500" />
                     <h3 className="font-semibold mb-2">Email</h3>
                     <p className="text-sm text-muted-foreground">
-                      contact@echoflowlabs.com
+                      josh@echoflowlabs.com
                     </p>
                   </CardContent>
                 </Card>
@@ -43,7 +69,7 @@ export default function ContactPage() {
                     <Phone className="h-8 w-8 mb-4 mx-auto text-blue-500" />
                     <h3 className="font-semibold mb-2">Phone</h3>
                     <p className="text-sm text-muted-foreground">
-                      +1 (555) 123-4567
+                      (318) 419-5264
                     </p>
                   </CardContent>
                 </Card>
@@ -64,27 +90,58 @@ export default function ContactPage() {
                   <CardTitle>Send a Message</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <form className="space-y-6">
+                  <form onSubmit={handleSubmit} className="space-y-6">
                     <div className="grid md:grid-cols-2 gap-4">
                       <div className="space-y-2">
                         <label className="text-sm font-medium">Name</label>
-                        <Input placeholder="Your name" />
+                        <Input 
+                          name="name"
+                          value={formData.name}
+                          onChange={handleChange}
+                          placeholder="Your name" 
+                          required
+                        />
                       </div>
                       <div className="space-y-2">
                         <label className="text-sm font-medium">Email</label>
-                        <Input type="email" placeholder="your@email.com" />
+                        <Input 
+                          name="email"
+                          type="email" 
+                          value={formData.email}
+                          onChange={handleChange}
+                          placeholder="your@email.com" 
+                          required
+                        />
                       </div>
                     </div>
                     <div className="space-y-2">
                       <label className="text-sm font-medium">Subject</label>
-                      <Input placeholder="How can we help?" />
+                      <Input 
+                        name="subject"
+                        value={formData.subject}
+                        onChange={handleChange}
+                        placeholder="How can we help?" 
+                        required
+                      />
                     </div>
                     <div className="space-y-2">
                       <label className="text-sm font-medium">Message</label>
-                      <Textarea placeholder="Tell us about your project..." className="min-h-[150px]" />
+                      <Textarea 
+                        name="message"
+                        value={formData.message}
+                        onChange={handleChange}
+                        placeholder="Tell us about your project..." 
+                        className="min-h-[150px]" 
+                        required
+                      />
                     </div>
-                    <Button size="lg" className="w-full md:w-auto">
-                      Send Message
+                    <Button 
+                      type="submit" 
+                      size="lg" 
+                      className="w-full md:w-auto"
+                      disabled={isSubmitting}
+                    >
+                      {isSubmitting ? "Sending..." : "Send Message"}
                     </Button>
                   </form>
                 </CardContent>
@@ -92,6 +149,7 @@ export default function ContactPage() {
             </div>
           </section>
         </main>
+        <Toaster />
       </div>
     </>
   )

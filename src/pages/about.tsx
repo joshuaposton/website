@@ -2,7 +2,7 @@
 import Head from "next/head"
 import { Navbar } from "@/components/layout/Navbar"
 import { Card, CardContent } from "@/components/ui/card"
-import { Building2, Code, Users, Workflow, FileSpreadsheet, Database, Bot, Laptop, ArrowRight, Boxes, Brain, Gauge } from "lucide-react"
+import { Building2, Code, Users, Workflow, FileSpreadsheet, Database, Bot, Laptop, ArrowRight, Boxes, Brain, Gauge, MapPin, Heart, Building, Store } from "lucide-react"
 import { motion } from "framer-motion"
 import { Separator } from "@/components/ui/separator"
 
@@ -34,6 +34,24 @@ export default function AboutPage() {
       icon: Gauge,
       title: "Optimization",
       description: "Continuous monitoring and refinement of automated processes"
+    }
+  ]
+
+  const localFeatures = [
+    {
+      icon: Store,
+      title: "Local Business Focus",
+      description: "Deep understanding of Alexandria's business community and unique market needs"
+    },
+    {
+      icon: Building,
+      title: "Community Roots",
+      description: "Proud member of the Alexandria business community, serving Central Louisiana"
+    },
+    {
+      icon: Heart,
+      title: "Community Investment",
+      description: "Committed to helping local businesses thrive through modern automation solutions"
     }
   ]
 
@@ -103,6 +121,47 @@ export default function AboutPage() {
                     </div>
                   </CardContent>
                 </Card>
+              </motion.div>
+
+              <Separator className="my-16" />
+
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8 }}
+                className="mb-24"
+              >
+                <div className="text-center mb-12">
+                  <div className="flex items-center justify-center gap-2 mb-4">
+                    <MapPin className="h-6 w-6 text-blue-600" />
+                    <h2 className="text-3xl font-bold tracking-tight">Our Alexandria Roots</h2>
+                  </div>
+                  <p className="text-xl text-muted-foreground max-w-[800px] mx-auto">
+                    Proudly based in Alexandria, Louisiana, we understand the unique challenges and opportunities 
+                    facing Central Louisiana businesses. Our local presence allows us to provide personalized 
+                    service while delivering world-class automation solutions.
+                  </p>
+                </div>
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                  {localFeatures.map((feature, index) => {
+                    const Icon = feature.icon
+                    return (
+                      <Card key={index} className="group hover:shadow-lg transition-all duration-300">
+                        <CardContent className="p-6">
+                          <div className="mb-4 relative">
+                            <div className="absolute inset-0 bg-blue-500/10 rounded-full blur-xl group-hover:bg-blue-500/20 transition-colors" />
+                            <div className="relative z-10">
+                              <Icon className="h-12 w-12 text-blue-600" />
+                            </div>
+                          </div>
+                          <h3 className="text-xl font-semibold mb-2">{feature.title}</h3>
+                          <p className="text-muted-foreground">{feature.description}</p>
+                        </CardContent>
+                      </Card>
+                    )
+                  })}
+                </div>
               </motion.div>
 
               <Separator className="my-16" />
