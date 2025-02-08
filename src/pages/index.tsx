@@ -11,7 +11,7 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>EchoFlow Labs - Business Process Automation</title>
+        <title>Business Process Automation & Workflow Automation | Process Improvement Solutions - EchoFlow Labs</title>
         <meta name="description" content="Transform your business operations with custom automation solutions. Specializing in Make.com, Excel, Python, and Airtable development for small businesses." />
         <link rel="icon" href="/favicon.ico" />
       </Head>
