@@ -4,7 +4,7 @@ import { Logo } from "@/components/layout/Logo"
 
 export function Navbar() {
   return (
-    <nav className="fixed top-0 w-full border-b bg-background/95 backdrop-blur-sm z-50">
+    <nav className="fixed top-0 w-full border-b bg-background z-[100]">
       <div className="container flex h-16 items-center justify-between">
         <Link href="/" className="flex items-center">
           <Logo />
