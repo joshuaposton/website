@@ -7,8 +7,8 @@ export default function ServicesPage() {
   return (
     <>
       <Head>
-        <title>Professional Automation Services - EchoFlow Labs</title>
-        <meta name="description" content="Explore our range of business automation services including Make.com integration, Excel automation, Python development, and Airtable solutions." />
+        <title>Business Process Optimization & Data Management Services - EchoFlow Labs</title>
+        <meta name="description" content="Expert business process optimization, data management, and workflow automation services. Specializing in Excel, Power BI, and custom business solutions." />
       </Head>
       
       <div className="flex min-h-screen flex-col">
@@ -18,10 +18,10 @@ export default function ServicesPage() {
             <div className="container">
               <div className="max-w-[800px] mx-auto text-center">
                 <h1 className="text-4xl font-bold tracking-tight mb-6">
-                  Automation Solutions
+                  Business Solutions & Services
                 </h1>
                 <p className="text-xl text-muted-foreground">
-                  Dive deep into our comprehensive suite of automation services. Each solution is carefully crafted to transform your business operations and drive efficiency.
+                  From process optimization to custom reporting solutions, we help businesses work smarter and more efficiently. Discover how we can transform your operations.
                 </p>
               </div>
             </div>

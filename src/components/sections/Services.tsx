@@ -1,127 +1,107 @@
 
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Clock, DollarSign, FileSpreadsheet, Target, Zap, Users } from "lucide-react"
+import { FileSpreadsheet, BarChart, Clock, Workflow, Headphones, Table2, ClipboardList } from "lucide-react"
 import { motion } from "framer-motion"
 
 export const services = [
   {
-    id: "time-saving-automation",
-    title: "Time-Saving Solutions",
-    description: "Stop spending hours on manual data entry. Our automation tools do the work for you!",
-    icon: Clock,
+    id: "business-process-optimization",
+    title: "Business Process Optimization",
+    description: "Transform your messy data into organized, efficient systems that save time and reduce errors.",
+    icon: FileSpreadsheet,
     color: "text-blue-500",
     useCases: [
-      "Turn 4 hours of data entry into a 5-minute task",
-      "Automatically sync customer info across all your tools",
-      "Send invoices and follow-ups automatically",
-      "Schedule social media posts in advance",
-      "Automate your email marketing campaigns"
+      "Fix complex Excel spreadsheets and formulas",
+      "Clean and organize business data",
+      "Create clear SOPs and process guides",
+      "Automate repetitive spreadsheet tasks",
+      "Streamline data entry processes"
     ],
     examples: [
-      "Customer details instantly updated everywhere",
-      "New leads automatically added to your system",
-      "Invoices generated and sent automatically",
-      "Customer support responses automated"
+      "Automated Excel reporting system",
+      "Structured data organization system",
+      "Clear process documentation",
+      "Efficient data entry workflows"
     ]
   },
   {
-    id: "business-organization",
-    title: "Business Organization",
-    description: "Keep all your business information organized and accessible in one place",
-    icon: Target,
-    color: "text-cyan-500",
-    useCases: [
-      "Track all your projects in one simple dashboard",
-      "Never lose track of inventory again",
-      "Keep customer information up-to-date automatically",
-      "Manage your content calendar effortlessly",
-      "Coordinate your team without endless emails"
-    ],
-    examples: [
-      "Real-time inventory tracking dashboard",
-      "Automated customer database updates",
-      "Team tasks automatically assigned",
-      "Custom reports sent to your inbox"
-    ]
-  },
-  {
-    id: "financial-automation",
-    title: "Financial Management",
-    description: "Save time and reduce errors in your financial processes",
-    icon: DollarSign,
+    id: "reporting-data-insights",
+    title: "Reporting & Data Insights",
+    description: "Get clear, actionable insights from your data with custom dashboards and automated reports.",
+    icon: BarChart,
     color: "text-emerald-500",
     useCases: [
-      "Generate financial reports automatically",
-      "Track expenses without spreadsheet headaches",
-      "Automate invoice creation and sending",
-      "Monitor sales and revenue in real-time",
-      "Simplify payroll and time tracking"
+      "Build real-time KPI dashboards",
+      "Create automated financial reports",
+      "Track employee productivity",
+      "Analyze historical data trends",
+      "Generate custom business insights"
     ],
     examples: [
-      "Monthly reports created automatically",
-      "Expenses categorized instantly",
-      "Sales dashboard always up-to-date",
-      "Payroll calculated automatically"
+      "Interactive Power BI dashboard",
+      "Automated financial summaries",
+      "Custom data analysis reports",
+      "Real-time KPI tracking"
     ]
   },
   {
-    id: "custom-solutions",
-    title: "Custom Business Solutions",
-    description: "Get a solution that fits your unique business needs perfectly",
-    icon: Zap,
-    color: "text-indigo-500",
-    useCases: [
-      "Streamline your specific business processes",
-      "Connect all your favorite tools",
-      "Automate unique industry workflows",
-      "Create custom reports automatically",
-      "Build your perfect business system"
-    ],
-    examples: [
-      "Your entire workflow automated",
-      "Custom reporting dashboard",
-      "Industry-specific solutions",
-      "Unique process automation"
-    ]
-  },
-  {
-    id: "workflow-automation",
-    title: "Smart Workflows",
-    description: "Let automation handle your repetitive daily tasks",
-    icon: FileSpreadsheet,
+    id: "workflow-solutions",
+    title: "Workflow & Time-Saving Solutions",
+    description: "Automate repetitive tasks and streamline your business processes.",
+    icon: Clock,
     color: "text-violet-500",
     useCases: [
-      "Turn manual processes into automatic ones",
-      "Speed up document processing",
-      "Automate approval processes",
-      "Handle customer service automatically",
-      "Streamline HR tasks"
+      "Automate form & document creation",
+      "Build inventory tracking systems",
+      "Create scheduling tools",
+      "Optimize email & CRM workflows",
+      "Streamline customer follow-ups"
     ],
     examples: [
-      "Documents processed automatically",
-      "New hire paperwork automated",
-      "Customer support streamlined",
-      "Data backed up automatically"
+      "Automated document generation",
+      "Custom inventory system",
+      "Efficient scheduling tool",
+      "Automated CRM workflows"
     ]
   },
   {
-    id: "team-collaboration",
-    title: "Team Productivity",
-    description: "Help your team work smarter, not harder",
-    icon: Users,
-    color: "text-purple-500",
+    id: "software-integration",
+    title: "Software & Tool Integration",
+    description: "Connect your existing tools and automate data flow between systems.",
+    icon: Workflow,
+    color: "text-indigo-500",
     useCases: [
-      "Keep everyone in sync automatically",
-      "Connect your online store to accounting",
-      "Streamline team communication",
-      "Automate task assignments",
-      "Track project progress easily"
+      "Set up Make.com automations",
+      "Configure Airtable workflows",
+      "Connect Excel to external data",
+      "Integrate business tools",
+      "Create custom API connections"
     ],
     examples: [
-      "Automated task management",
-      "Team updates sent automatically",
-      "Project timelines tracked easily",
-      "Resources allocated efficiently"
+      "Automated tool integration",
+      "Excel-API connections",
+      "Custom workflow automation",
+      "Cross-platform data sync"
+    ]
+  },
+  {
+    id: "tech-support-training",
+    title: "On-Demand Tech Support & Training",
+    description: "Get expert help when you need it and empower your team with custom training.",
+    icon: Headphones,
+    color: "text-cyan-500",
+    useCases: [
+      "Provide one-on-one tool training",
+      "Fix spreadsheet issues",
+      "Troubleshoot broken formulas",
+      "Train teams on new systems",
+      "Solve technical bottlenecks"
+    ],
+    examples: [
+      "Custom team training sessions",
+      "Quick technical support",
+      "Formula troubleshooting",
+      "System optimization help"
     ]
   }
 ]
@@ -139,8 +119,7 @@ export function Services() {
         >
           <h2 className="text-3xl font-bold tracking-tight mb-4">How We Can Help</h2>
           <p className="text-xl text-muted-foreground max-w-[800px] mx-auto">
-            Let us handle the technical stuff while you focus on growing your business. 
-            Our solutions are designed to make your life easier and your business more profitable.
+            We help businesses optimize their processes, improve data management, and save time with practical, easy-to-use solutions.
           </p>
         </motion.div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">

@@ -6,53 +6,45 @@ import { Badge } from "@/components/ui/badge"
 import { ArrowRight, CheckCircle2 } from "lucide-react"
 
 const serviceBenefits = {
-  "time-saving-automation": [
-    "Save 20+ Hours Weekly",
-    "Zero Manual Data Entry",
-    "Automatic Updates",
-    "Error-Free Operations",
-    "24/7 Automation",
-    "Instant Information Flow"
-  ],
-  "business-organization": [
-    "Everything in One Place",
-    "Real-time Updates",
-    "Easy Information Access",
-    "Paperless Operations",
-    "Smart Organization",
-    "Automatic Backups"
-  ],
-  "financial-automation": [
-    "Accurate Calculations",
-    "Automatic Reports",
-    "Error Prevention",
-    "Time Savings",
-    "Cost Reduction",
-    "Financial Clarity"
-  ],
-  "custom-solutions": [
-    "Tailored to Your Needs",
-    "Perfect Fit Solution",
-    "Future-Proof Systems",
-    "Scalable Design",
-    "Easy to Use",
-    "Full Support"
-  ],
-  "workflow-automation": [
-    "Faster Operations",
-    "Consistent Results",
-    "Quality Assurance",
-    "Time Savings",
+  "business-process-optimization": [
+    "Increased Efficiency",
     "Error Reduction",
-    "Easy Management"
+    "Time Savings",
+    "Better Organization",
+    "Clear Processes",
+    "Improved Accuracy"
   ],
-  "team-collaboration": [
-    "Better Communication",
-    "Task Automation",
-    "Team Efficiency",
-    "Real-time Updates",
-    "Work Anywhere",
-    "Easy Coordination"
+  "reporting-data-insights": [
+    "Data-Driven Decisions",
+    "Real-Time Insights",
+    "Automated Reports",
+    "Clear Metrics",
+    "Better Planning",
+    "Performance Tracking"
+  ],
+  "workflow-solutions": [
+    "Time Savings",
+    "Automated Tasks",
+    "Reduced Errors",
+    "Better Organization",
+    "Streamlined Process",
+    "Improved Efficiency"
+  ],
+  "software-integration": [
+    "Connected Systems",
+    "Automated Data Flow",
+    "Real-Time Updates",
+    "Reduced Manual Work",
+    "Error Prevention",
+    "Time Savings"
+  ],
+  "tech-support-training": [
+    "Expert Support",
+    "Quick Solutions",
+    "Team Empowerment",
+    "Improved Skills",
+    "Reduced Downtime",
+    "Better Efficiency"
   ]
 }
 
