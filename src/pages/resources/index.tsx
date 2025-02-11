@@ -41,8 +41,8 @@ export default function ResourcesPage() {
 
       <div className="flex min-h-screen flex-col">
         <Navbar />
-        <main className="flex-1">
-          <div className="container mx-auto px-4 py-8">
+        <main className="flex-1 pt-16">
+          <div className="container mx-auto px-4 py-12">
             <div className="text-center mb-12">
               <h1 className="text-4xl font-bold tracking-tight mb-4">
                 Business Process Automation Resources
