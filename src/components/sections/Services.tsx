@@ -1,107 +1,127 @@
 
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { FileSpreadsheet, BarChart, Clock, Workflow, Headphones, Table2, ClipboardList } from "lucide-react"
+import { Code, Brain, Workflow, Database, Cloud, Robot } from "lucide-react"
 import { motion } from "framer-motion"
 
 export const services = [
   {
-    id: "business-process-optimization",
-    title: "Business Process Optimization",
-    description: "Transform your messy data into organized, efficient systems that save time and reduce errors.",
-    icon: FileSpreadsheet,
+    id: "web-development",
+    title: "Custom Web Development",
+    description: "Modern, scalable web applications that help your business grow and operate efficiently.",
+    icon: Code,
     color: "text-blue-500",
     useCases: [
-      "Fix complex Excel spreadsheets and formulas",
-      "Clean and organize business data",
-      "Create clear SOPs and process guides",
-      "Automate repetitive spreadsheet tasks",
-      "Streamline data entry processes"
+      "Build customer portals and dashboards",
+      "Create internal management systems",
+      "Develop e-commerce solutions",
+      "Design responsive web applications",
+      "Implement secure user authentication"
     ],
     examples: [
-      "Automated Excel reporting system",
-      "Structured data organization system",
-      "Clear process documentation",
-      "Efficient data entry workflows"
+      "Customer relationship management (CRM) system",
+      "Inventory management dashboard",
+      "Online booking platform",
+      "Employee management portal"
     ]
   },
   {
-    id: "reporting-data-insights",
-    title: "Reporting & Data Insights",
-    description: "Get clear, actionable insights from your data with custom dashboards and automated reports.",
-    icon: BarChart,
+    id: "ai-integration",
+    title: "AI & Machine Learning Solutions",
+    description: "Harness the power of AI to automate decisions, predict trends, and enhance customer experience.",
+    icon: Brain,
+    color: "text-purple-500",
+    useCases: [
+      "Implement chatbots for customer service",
+      "Automate document processing",
+      "Create predictive analytics models",
+      "Build recommendation systems",
+      "Develop AI-powered automation"
+    ],
+    examples: [
+      "Intelligent customer service bot",
+      "Automated document analysis",
+      "Sales prediction system",
+      "Smart inventory management"
+    ]
+  },
+  {
+    id: "workflow-automation",
+    title: "Business Process Automation",
+    description: "End-to-end automation solutions that save time, reduce errors, and boost productivity.",
+    icon: Workflow,
     color: "text-emerald-500",
     useCases: [
-      "Build real-time KPI dashboards",
-      "Create automated financial reports",
-      "Track employee productivity",
-      "Analyze historical data trends",
-      "Generate custom business insights"
+      "Automate repetitive business tasks",
+      "Create custom workflow solutions",
+      "Integrate multiple software systems",
+      "Build automated reporting systems",
+      "Streamline approval processes"
     ],
     examples: [
-      "Interactive Power BI dashboard",
-      "Automated financial summaries",
-      "Custom data analysis reports",
-      "Real-time KPI tracking"
+      "Automated invoice processing",
+      "Order fulfillment system",
+      "Employee onboarding automation",
+      "Marketing campaign automation"
     ]
   },
   {
-    id: "workflow-solutions",
-    title: "Workflow & Time-Saving Solutions",
-    description: "Automate repetitive tasks and streamline your business processes.",
-    icon: Clock,
-    color: "text-violet-500",
+    id: "data-integration",
+    title: "Data Integration & Analytics",
+    description: "Connect your business tools and gain valuable insights from your data.",
+    icon: Database,
+    color: "text-amber-500",
     useCases: [
-      "Automate form & document creation",
-      "Build inventory tracking systems",
-      "Create scheduling tools",
-      "Optimize email & CRM workflows",
-      "Streamline customer follow-ups"
+      "Integrate multiple data sources",
+      "Create automated dashboards",
+      "Build custom reporting tools",
+      "Implement data warehousing",
+      "Design ETL pipelines"
     ],
     examples: [
-      "Automated document generation",
-      "Custom inventory system",
-      "Efficient scheduling tool",
-      "Automated CRM workflows"
+      "Real-time business analytics",
+      "Automated data synchronization",
+      "Custom reporting platform",
+      "Multi-system data integration"
     ]
   },
   {
-    id: "software-integration",
-    title: "Software & Tool Integration",
-    description: "Connect your existing tools and automate data flow between systems.",
-    icon: Workflow,
-    color: "text-indigo-500",
+    id: "cloud-solutions",
+    title: "Cloud Infrastructure & DevOps",
+    description: "Scalable, secure cloud solutions that grow with your business.",
+    icon: Cloud,
+    color: "text-sky-500",
     useCases: [
-      "Set up Make.com automations",
-      "Configure Airtable workflows",
-      "Connect Excel to external data",
-      "Integrate business tools",
-      "Create custom API connections"
+      "Set up cloud infrastructure",
+      "Implement continuous deployment",
+      "Configure automatic scaling",
+      "Manage cloud security",
+      "Optimize cloud costs"
     ],
     examples: [
-      "Automated tool integration",
-      "Excel-API connections",
-      "Custom workflow automation",
-      "Cross-platform data sync"
+      "Automated deployment pipeline",
+      "Scalable cloud architecture",
+      "Secure data backup system",
+      "Cloud cost optimization"
     ]
   },
   {
-    id: "tech-support-training",
-    title: "On-Demand Tech Support & Training",
-    description: "Get expert help when you need it and empower your team with custom training.",
-    icon: Headphones,
-    color: "text-cyan-500",
+    id: "process-optimization",
+    title: "Digital Transformation",
+    description: "Transform your business with cutting-edge digital solutions and process optimization.",
+    icon: Robot,
+    color: "text-rose-500",
     useCases: [
-      "Provide one-on-one tool training",
-      "Fix spreadsheet issues",
-      "Troubleshoot broken formulas",
-      "Train teams on new systems",
-      "Solve technical bottlenecks"
+      "Digitize paper-based processes",
+      "Implement digital workflows",
+      "Create automated systems",
+      "Design efficient processes",
+      "Build custom digital tools"
     ],
     examples: [
-      "Custom team training sessions",
-      "Quick technical support",
-      "Formula troubleshooting",
-      "System optimization help"
+      "Paperless office system",
+      "Digital workflow platform",
+      "Process automation suite",
+      "Custom business tools"
     ]
   }
 ]
@@ -117,9 +137,9 @@ export function Services() {
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
         >
-          <h2 className="text-3xl font-bold tracking-tight mb-4">How We Can Help</h2>
+          <h2 className="text-3xl font-bold tracking-tight mb-4">Comprehensive Digital Solutions</h2>
           <p className="text-xl text-muted-foreground max-w-[800px] mx-auto">
-            We help businesses optimize their processes, improve data management, and save time with practical, easy-to-use solutions.
+            From custom web applications to AI-powered automation, we help small businesses leverage enterprise-grade technology solutions at an affordable price.
           </p>
         </motion.div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -147,7 +167,7 @@ export function Services() {
                   </CardHeader>
                   <CardContent>
                     <div>
-                      <h4 className="font-medium mb-2">What You Get:</h4>
+                      <h4 className="font-medium mb-2">Key Solutions:</h4>
                       <ul className="list-disc list-inside text-sm text-muted-foreground space-y-1">
                         {service.useCases.slice(0, 3).map((useCase, i) => (
                           <li key={i}>{useCase}</li>
