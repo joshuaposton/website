@@ -1,6 +1,6 @@
 
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Code, Brain, Workflow, Database, Cloud, Robot } from "lucide-react"
+import { Code, Brain, Workflow, Database, Cloud, Bot } from "lucide-react"
 import { motion } from "framer-motion"
 
 export const services = [
@@ -108,7 +108,7 @@ export const services = [
     id: "process-optimization",
     title: "Digital Transformation",
     description: "Transform your business with cutting-edge digital solutions and process optimization.",
-    icon: Robot,
+    icon: Bot,
     color: "text-rose-500",
     useCases: [
       "Digitize paper-based processes",
