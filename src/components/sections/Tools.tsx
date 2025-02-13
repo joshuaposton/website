@@ -1,52 +1,74 @@
 
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { motion } from "framer-motion"
-import { Boxes, Table2, Workflow, Code2 } from "lucide-react"
+import { Code2, Brain, Cloud, Database, Workflow, Settings } from "lucide-react"
 
 export function Tools() {
   const tools = [
     {
-      name: "Business Database",
-      description: "Keep everything organized in one place - from customer details to inventory, all easily searchable and always up-to-date",
-      icon: Table2,
+      name: "Web Development Stack",
+      description: "Build powerful web applications using modern frameworks and technologies that scale with your business",
+      icon: Code2,
       color: "text-blue-500",
       benefits: [
-        "Find any information in seconds",
-        "Always accurate and up-to-date",
-        "Everything organized automatically"
+        "Modern, responsive interfaces",
+        "Scalable architecture",
+        "Secure and reliable"
       ]
     },
     {
-      name: "Workflow Builder",
-      description: "Let your business run smoothly with automated tasks that work exactly how you want them to",
-      icon: Workflow,
-      color: "text-green-500",
-      benefits: [
-        "Save hours on repetitive tasks",
-        "Everything happens automatically",
-        "Works with your favorite tools"
-      ]
-    },
-    {
-      name: "Smart Spreadsheets",
-      description: "Keep using Excel while we add powerful automation to make it work harder for your business",
-      icon: Boxes,
+      name: "AI & ML Solutions",
+      description: "Leverage cutting-edge artificial intelligence and machine learning tools to automate decisions and predict trends",
+      icon: Brain,
       color: "text-purple-500",
       benefits: [
-        "Stay with familiar tools",
-        "Automatic calculations",
-        "No more manual updates"
+        "Intelligent automation",
+        "Predictive analytics",
+        "Smart recommendations"
       ]
     },
     {
-      name: "Custom Solutions",
-      description: "Get exactly what your business needs - custom automation that grows with you",
-      icon: Code2,
-      color: "text-indigo-500",
+      name: "Cloud Infrastructure",
+      description: "Deploy your solutions on reliable, scalable cloud platforms with automatic scaling and backup",
+      icon: Cloud,
+      color: "text-sky-500",
       benefits: [
-        "Built just for your business",
-        "Adapts as you grow",
-        "Works exactly how you need"
+        "High availability",
+        "Automatic scaling",
+        "Secure data storage"
+      ]
+    },
+    {
+      name: "Data Integration",
+      description: "Connect all your business tools and systems for seamless data flow and real-time insights",
+      icon: Database,
+      color: "text-emerald-500",
+      benefits: [
+        "Unified data flow",
+        "Real-time syncing",
+        "Automated reporting"
+      ]
+    },
+    {
+      name: "Process Automation",
+      description: "Streamline your workflows with intelligent automation that saves time and reduces errors",
+      icon: Workflow,
+      color: "text-amber-500",
+      benefits: [
+        "Efficient workflows",
+        "Error reduction",
+        "Time savings"
+      ]
+    },
+    {
+      name: "System Integration",
+      description: "Connect and optimize your existing tools and systems for maximum efficiency",
+      icon: Settings,
+      color: "text-rose-500",
+      benefits: [
+        "Seamless connectivity",
+        "Enhanced efficiency",
+        "Custom integration"
       ]
     }
   ]
@@ -61,14 +83,15 @@ export function Tools() {
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
         >
-          <h2 className="text-3xl font-bold tracking-tight mb-4">Business-Friendly Tools</h2>
+          <h2 className="text-3xl font-bold tracking-tight mb-4">Comprehensive Technology Stack</h2>
           <p className="text-xl text-muted-foreground max-w-[800px] mx-auto">
-            We use reliable, proven tools to automate your business tasks. You focus on running your business - 
-            we will handle making everything work together smoothly.
+            We leverage modern technologies and proven tools to deliver comprehensive digital solutions that 
+            transform your business. From web development to AI integration - we have the expertise to bring 
+            your vision to life.
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {tools.map((tool, index) => {
             const Icon = tool.icon
             return (
@@ -79,7 +102,7 @@ export function Tools() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
               >
-                <Card className="group hover:shadow-lg transition-all duration-300">
+                <Card className="group hover:shadow-lg transition-all duration-300 h-full">
                   <CardHeader>
                     <div className="flex items-center gap-4">
                       <div className="relative p-2">
