@@ -1,57 +1,57 @@
 
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Zap, Clock, DollarSign, BarChart, Shield, Sparkles } from "lucide-react"
+import { Code, Brain, Workflow, Database, Cloud, Bot } from "lucide-react"
 import { motion } from "framer-motion"
 
 export function Features() {
   const features = [
     {
-      title: "Business Process Automation",
-      description: "Transform your operations with intelligent automation that streamlines workflows and eliminates manual tasks",
-      icon: Zap,
-      color: "text-yellow-500",
-      gradient: "from-yellow-500 to-orange-500",
-      metric: "Up to 80% time savings"
-    },
-    {
-      title: "Workflow Automation",
-      description: "Implement automated workflows that optimize your business processes and enhance operational efficiency",
-      icon: Clock,
+      title: "Custom Web Development",
+      description: "Build modern, scalable web applications that streamline operations and enhance user experience",
+      icon: Code,
       color: "text-blue-500",
       gradient: "from-blue-500 to-cyan-500",
-      metric: "24/7 automated processes"
+      metric: "100% customized"
     },
     {
-      title: "Process Improvement",
-      description: "Continuously optimize and enhance your business processes through data-driven automation solutions",
-      icon: DollarSign,
-      color: "text-green-500",
-      gradient: "from-green-500 to-emerald-500",
-      metric: "60% efficiency boost"
-    },
-    {
-      title: "Data-Driven Insights",
-      description: "Leverage automated analytics to drive continuous process improvement and operational excellence",
-      icon: BarChart,
+      title: "AI & Machine Learning",
+      description: "Leverage artificial intelligence to automate decisions, predict trends, and enhance operations",
+      icon: Brain,
       color: "text-purple-500",
       gradient: "from-purple-500 to-pink-500",
-      metric: "Real-time analytics"
+      metric: "24/7 AI-powered"
     },
     {
-      title: "Secure & Reliable",
-      description: "Enterprise-grade security for your automated business processes with reliable backup systems",
-      icon: Shield,
-      color: "text-red-500",
-      gradient: "from-red-500 to-rose-500",
+      title: "Process Automation",
+      description: "Streamline workflows and eliminate manual tasks with intelligent automation solutions",
+      icon: Workflow,
+      color: "text-green-500",
+      gradient: "from-green-500 to-emerald-500",
+      metric: "80% time savings"
+    },
+    {
+      title: "Data Integration",
+      description: "Connect your business tools and gain valuable insights through seamless data integration",
+      icon: Database,
+      color: "text-amber-500",
+      gradient: "from-amber-500 to-orange-500",
+      metric: "Real-time sync"
+    },
+    {
+      title: "Cloud Solutions",
+      description: "Build scalable, secure cloud infrastructure that grows with your business needs",
+      icon: Cloud,
+      color: "text-sky-500",
+      gradient: "from-sky-500 to-blue-500",
       metric: "99.9% uptime"
     },
     {
-      title: "Custom Solutions",
-      description: "Tailored workflow automation solutions designed specifically for your unique business needs",
-      icon: Sparkles,
-      color: "text-indigo-500",
-      gradient: "from-indigo-500 to-violet-500",
-      metric: "100% customizable"
+      title: "Digital Transformation",
+      description: "Transform your business with comprehensive digital solutions and process optimization",
+      icon: Bot,
+      color: "text-rose-500",
+      gradient: "from-rose-500 to-red-500",
+      metric: "Full integration"
     }
   ]
 
@@ -68,10 +68,10 @@ export function Features() {
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
         >
-          <h2 className="text-3xl font-bold tracking-tight mb-4">Transform Your Business Operations</h2>
+          <h2 className="text-3xl font-bold tracking-tight mb-4">Comprehensive Digital Solutions</h2>
           <p className="text-xl text-muted-foreground max-w-[800px] mx-auto">
-            Elevate your business with comprehensive process automation solutions that drive efficiency,
-            reduce costs, and accelerate growth through continuous process improvement.
+            From custom web applications to AI-powered automation, we deliver end-to-end digital solutions
+            that help your business thrive in the modern digital landscape.
           </p>
         </motion.div>
 

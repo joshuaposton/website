@@ -1,16 +1,16 @@
 
 import { Button } from "@/components/ui/button"
-import { Clock, DollarSign, Sparkles, Shield, Heart, Target } from "lucide-react"
+import { Code, Brain, Workflow, Database, Cloud, Bot } from "lucide-react"
 import { motion } from "framer-motion"
 
 export function Hero() {
   const floatingIcons = [
-    { Icon: Clock, color: "text-blue-500", delay: 0 },
-    { Icon: DollarSign, color: "text-green-500", delay: 0.2 },
-    { Icon: Sparkles, color: "text-purple-500", delay: 0.4 },
-    { Icon: Shield, color: "text-red-500", delay: 0.6 },
-    { Icon: Heart, color: "text-pink-500", delay: 0.8 },
-    { Icon: Target, color: "text-indigo-500", delay: 1 }
+    { Icon: Code, color: "text-blue-500", delay: 0 },
+    { Icon: Brain, color: "text-purple-500", delay: 0.2 },
+    { Icon: Workflow, color: "text-green-500", delay: 0.4 },
+    { Icon: Database, color: "text-amber-500", delay: 0.6 },
+    { Icon: Cloud, color: "text-sky-500", delay: 0.8 },
+    { Icon: Bot, color: "text-rose-500", delay: 1 }
   ]
 
   return (
@@ -64,9 +64,9 @@ export function Hero() {
             }}
           />
           <div className="relative flex space-x-4 mb-8">
-            <Clock className="h-12 w-12 text-blue-500" />
-            <DollarSign className="h-12 w-12 text-green-500" />
-            <Heart className="h-12 w-12 text-pink-500" />
+            <Code className="h-12 w-12 text-blue-500" />
+            <Brain className="h-12 w-12 text-purple-500" />
+            <Bot className="h-12 w-12 text-rose-500" />
           </div>
         </div>
 
@@ -77,13 +77,14 @@ export function Hero() {
           transition={{ delay: 0.2, duration: 0.8 }}
         >
           <h1 className="text-4xl md:text-6xl font-bold tracking-tight text-center">
-            Transform Your Business Through<br />Process Automation
+            Transform Your Business Through<br />Digital Innovation
           </h1>
           
           <p className="text-xl text-muted-foreground leading-relaxed">
-            Revolutionize your operations with powerful business process automation and workflow automation solutions. 
-            We help small businesses achieve process improvement that saves 20+ hours per week through intelligent automation. 
-            No technical expertise needed - we handle the complexity while you focus on growth.
+            Empower your business with custom web applications, AI-driven solutions, and intelligent automation. 
+            We help small businesses leverage cutting-edge technology to streamline operations, enhance efficiency, 
+            and drive growth. From web development to machine learning - we handle the technical complexity while 
+            you focus on success.
           </p>
         </motion.div>
       </motion.div>
