@@ -20,19 +20,35 @@ export default async function handler(
         user: !!process.env.SMTP_USER,
         pass: !!process.env.SMTP_PASS
       })
-      return res.status(500).json({ message: "Server configuration error - Missing SMTP settings" })
+      return res.status(500).json({ 
+        message: "Server configuration error - Missing SMTP settings",
+        details: {
+          host: !process.env.SMTP_HOST ? "Missing SMTP_HOST" : undefined,
+          port: !process.env.SMTP_PORT ? "Missing SMTP_PORT" : undefined,
+          user: !process.env.SMTP_USER ? "Missing SMTP_USER" : undefined,
+          pass: !process.env.SMTP_PASS ? "Missing SMTP_PASS" : undefined
+        }
+      })
     }
+
+    console.log("SMTP Configuration:", {
+      host: process.env.SMTP_HOST,
+      port: process.env.SMTP_PORT,
+      secure: process.env.SMTP_PORT === "465",
+      user: process.env.SMTP_USER ? "Set" : "Missing"
+    })
 
     const transportConfig = {
       host: process.env.SMTP_HOST,
       port: Number(process.env.SMTP_PORT),
-      secure: process.env.SMTP_PORT === "465",
+      secure: false, // Try without secure first
       auth: {
         user: process.env.SMTP_USER,
         pass: process.env.SMTP_PASS,
       },
       tls: {
-        rejectUnauthorized: false
+        rejectUnauthorized: false,
+        ciphers: "SSLv3"
       }
     }
 
@@ -53,7 +69,12 @@ export default async function handler(
       console.error("SMTP Connection Error:", verifyError)
       return res.status(500).json({ 
         message: "Failed to connect to email server", 
-        details: verifyError instanceof Error ? verifyError.message : "Unknown error"
+        details: verifyError instanceof Error ? verifyError.message : "Unknown error",
+        config: {
+          host: process.env.SMTP_HOST,
+          port: process.env.SMTP_PORT,
+          secure: false
+        }
       })
     }
 
