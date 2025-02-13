@@ -34,22 +34,20 @@ export default async function handler(
     console.log("SMTP Configuration:", {
       host: process.env.SMTP_HOST,
       port: process.env.SMTP_PORT,
-      secure: process.env.SMTP_PORT === "465",
+      secure: true,
       user: process.env.SMTP_USER ? "Set" : "Missing"
     })
 
     const transportConfig = {
-      host: process.env.SMTP_HOST,
-      port: Number(process.env.SMTP_PORT),
-      secure: false, // Try without secure first
+      host: "mail.privateemail.com",
+      port: 465,
+      secure: true,
       auth: {
         user: process.env.SMTP_USER,
         pass: process.env.SMTP_PASS,
       },
-      tls: {
-        rejectUnauthorized: false,
-        ciphers: "SSLv3"
-      }
+      debug: true,
+      logger: true
     }
 
     console.log("Creating transport with config:", {
@@ -71,9 +69,9 @@ export default async function handler(
         message: "Failed to connect to email server", 
         details: verifyError instanceof Error ? verifyError.message : "Unknown error",
         config: {
-          host: process.env.SMTP_HOST,
-          port: process.env.SMTP_PORT,
-          secure: false
+          host: transportConfig.host,
+          port: transportConfig.port,
+          secure: transportConfig.secure
         }
       })
     }
