@@ -6,45 +6,53 @@ import { Badge } from "@/components/ui/badge"
 import { ArrowRight, CheckCircle2 } from "lucide-react"
 
 const serviceBenefits = {
-  "business-process-optimization": [
-    "Increased Efficiency",
+  "web-development": [
+    "Scalable Solutions",
+    "Modern Technology",
+    "Custom Features",
+    "Enhanced UX",
+    "Mobile Responsive",
+    "Secure Platform"
+  ],
+  "ai-integration": [
+    "Smart Automation",
+    "Predictive Insights",
+    "24/7 Operation",
+    "Cost Reduction",
+    "Enhanced Accuracy",
+    "Scalable Learning"
+  ],
+  "workflow-automation": [
+    "Time Savings",
     "Error Reduction",
-    "Time Savings",
-    "Better Organization",
-    "Clear Processes",
-    "Improved Accuracy"
+    "Process Efficiency",
+    "Cost Optimization",
+    "Better Accuracy",
+    "Faster Delivery"
   ],
-  "reporting-data-insights": [
-    "Data-Driven Decisions",
-    "Real-Time Insights",
-    "Automated Reports",
-    "Clear Metrics",
-    "Better Planning",
-    "Performance Tracking"
+  "data-integration": [
+    "Real-time Insights",
+    "Unified Data",
+    "Automated Sync",
+    "Better Decisions",
+    "Clear Reporting",
+    "Data Accuracy"
   ],
-  "workflow-solutions": [
-    "Time Savings",
-    "Automated Tasks",
-    "Reduced Errors",
-    "Better Organization",
-    "Streamlined Process",
-    "Improved Efficiency"
+  "cloud-solutions": [
+    "High Availability",
+    "Auto Scaling",
+    "Cost Efficiency",
+    "Data Security",
+    "Easy Updates",
+    "Disaster Recovery"
   ],
-  "software-integration": [
-    "Connected Systems",
-    "Automated Data Flow",
-    "Real-Time Updates",
-    "Reduced Manual Work",
-    "Error Prevention",
-    "Time Savings"
-  ],
-  "tech-support-training": [
-    "Expert Support",
-    "Quick Solutions",
-    "Team Empowerment",
-    "Improved Skills",
-    "Reduced Downtime",
-    "Better Efficiency"
+  "process-optimization": [
+    "Digital Efficiency",
+    "Streamlined Work",
+    "Better Control",
+    "Clear Insights",
+    "Faster Processes",
+    "Enhanced Quality"
   ]
 }
 
