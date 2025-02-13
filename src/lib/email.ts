@@ -21,14 +21,17 @@ export const sendEmail = async (data: EmailData) => {
       }),
     })
 
+    const result = await response.json()
+
     if (!response.ok) {
-      throw new Error("Failed to send email")
+      throw new Error(result.message || "Failed to send email")
     }
 
-    toast.success("Message sent successfully!")
+    toast.success("Message sent successfully! We'll get back to you soon.")
     return true
   } catch (error) {
-    toast.error("Failed to send message. Please try again.")
+    console.error("Email Error:", error)
+    toast.error(error instanceof Error ? error.message : "Failed to send message. Please try again.")
     return false
   }
 }
