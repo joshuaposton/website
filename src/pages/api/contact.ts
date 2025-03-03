@@ -1,6 +1,8 @@
 
 import type { NextApiRequest, NextApiResponse } from "next";
 import nodemailer from "nodemailer";
+import fs from "fs";
+import path from "path";
 
 type ContactFormData = {
   name: string;
@@ -40,6 +42,33 @@ async function verifyTransporter() {
     return true;
   } catch (error) {
     console.error("Failed to verify email transporter:", error);
+    return false;
+  }
+}
+
+// Function to save email to a local file for development purposes
+async function saveEmailLocally(mailOptions: any) {
+  try {
+    const timestamp = new Date().toISOString().replace(/[:.]/g, "-");
+    const fileName = `contact-form-${timestamp}.json`;
+    const filePath = path.join(process.cwd(), "logs", fileName);
+    
+    // Create logs directory if it doesn't exist
+    const logsDir = path.join(process.cwd(), "logs");
+    if (!fs.existsSync(logsDir)) {
+      fs.mkdirSync(logsDir, { recursive: true });
+    }
+    
+    // Write email content to file
+    fs.writeFileSync(
+      filePath,
+      JSON.stringify(mailOptions, null, 2)
+    );
+    
+    console.log(`Email saved locally to ${filePath}`);
+    return true;
+  } catch (error) {
+    console.error("Failed to save email locally:", error);
     return false;
   }
 }
@@ -114,26 +143,50 @@ ${message}
     
     // First verify the transporter
     const isTransporterValid = await verifyTransporter();
+    let emailSent = false;
     
-    if (!isTransporterValid) {
-      throw new Error("Email service connection failed during verification");
+    if (isTransporterValid) {
+      try {
+        // Send the email with a timeout
+        const emailSendPromise = transporter.sendMail(mailOptions);
+        
+        // Create a timeout promise
+        const timeoutPromise = new Promise((_, reject) => {
+          setTimeout(() => {
+            reject(new Error("Email sending timed out after 10 seconds"));
+          }, 10000);
+        });
+        
+        // Race the email sending against the timeout
+        const info = await Promise.race([emailSendPromise, timeoutPromise]) as nodemailer.SentMessageInfo;
+        
+        console.log("Email sent successfully:", info.response);
+        console.log("Message ID:", info.messageId);
+        emailSent = true;
+      } catch (error) {
+        console.error("Failed to send email via SMTP:", error);
+        // We'll fall back to local storage
+      }
     }
     
-    // Send the email with a timeout
-    const emailSendPromise = transporter.sendMail(mailOptions);
-    
-    // Create a timeout promise
-    const timeoutPromise = new Promise((_, reject) => {
-      setTimeout(() => {
-        reject(new Error("Email sending timed out after 10 seconds"));
-      }, 10000);
-    });
-    
-    // Race the email sending against the timeout
-    const info = await Promise.race([emailSendPromise, timeoutPromise]) as nodemailer.SentMessageInfo;
-    
-    console.log("Email sent successfully:", info.response);
-    console.log("Message ID:", info.messageId);
+    // If email sending failed, save it locally for development purposes
+    if (!emailSent) {
+      console.log("SMTP email sending failed. Saving email locally for development...");
+      await saveEmailLocally(mailOptions);
+      
+      // For development, we'll still return success to the frontend
+      // This allows testing the form without SMTP connection
+      if (process.env.NODE_ENV === "development") {
+        return res.status(200).json({
+          success: true,
+          message: "Message saved locally for development. SMTP connection failed.",
+          error: "Email not sent via SMTP due to connection issues. This is normal in local development."
+        });
+      } else {
+        // In production, we should return an error
+        throw new Error("Failed to send email via SMTP");
+      }
+    }
 
     return res.status(200).json({ 
       success: true, 
@@ -154,7 +207,7 @@ ${message}
     
     if (error.code === "ETIMEDOUT" || error.message?.includes("timed out")) {
       errorMessage = "Connection to email server timed out. This is likely due to network restrictions.";
-      errorDetail = "Consider using a different email service provider or contact the site administrator.";
+      errorDetail = "This is common in local development environments where SMTP connections are often blocked.";
     } else if (error.code === "EAUTH") {
       errorMessage = "Email authentication failed.";
       errorDetail = "Please check your email credentials.";
