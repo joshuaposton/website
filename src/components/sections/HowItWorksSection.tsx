@@ -1,5 +1,6 @@
 
 import { Card, CardContent } from "@/components/ui/card";
+import { ArrowRight } from "lucide-react";
 
 export function HowItWorksSection() {
   const steps = [
@@ -25,7 +26,7 @@ export function HowItWorksSection() {
       <div className="container">
         <div className="mx-auto max-w-3xl text-center mb-12">
           <h2 className="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl mb-6">
-            How We Make AI Work for You
+            How We Make AI <span className="gradient-text">Work for You</span>
           </h2>
           <p className="text-lg text-muted-foreground">
             Our simple 3-step process makes implementing AI in your business straightforward and effective.
@@ -34,12 +35,19 @@ export function HowItWorksSection() {
         
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
           {steps.map((step, index) => (
-            <Card key={index} className="card-hover relative overflow-hidden border-2 border-border">
-              <div className="absolute -right-4 -top-4 h-24 w-24 bg-primary/10 rounded-full flex items-center justify-center">
-                <span className="text-3xl font-bold text-primary">{step.number}</span>
-              </div>
-              <CardContent className="p-6 pt-12">
-                <h3 className="text-xl font-bold mb-3">{step.title}</h3>
+            <Card key={index} className="card-hover relative overflow-hidden border border-border group">
+              <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-primary/40 via-accent/40 to-primary/40 group-hover:h-1.5 transition-all duration-300"></div>
+              <CardContent className="p-8">
+                <div className="flex items-center gap-4 mb-4">
+                  <div className="relative">
+                    <div className="h-12 w-12 rounded-full bg-gradient-to-br from-primary/10 to-accent/10 flex items-center justify-center">
+                      <span className="text-2xl font-bold text-primary">{step.number}</span>
+                    </div>
+                    <div className="absolute -inset-1 rounded-full bg-gradient-to-br from-primary/20 to-accent/20 blur-sm -z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  </div>
+                  <ArrowRight className="h-5 w-5 text-primary/40 group-hover:text-primary transition-colors duration-300" />
+                </div>
+                <h3 className="text-xl font-bold mb-3 group-hover:text-primary transition-colors duration-300">{step.title}</h3>
                 <p className="text-muted-foreground">{step.description}</p>
               </CardContent>
             </Card>
