@@ -26,7 +26,7 @@ export function HeroSection() {
           </h1>
           
           <p className="mb-6 text-lg text-muted-foreground md:text-xl max-w-3xl mx-auto">
-            Join the 200+ SMBs already using our AI solutions to cut costs, automate workflows, and drive measurable business growth.
+            Unlock the power of AI to cut costs, automate workflows, and drive measurable business growth for your company.
           </p>
           
           {/* Trust indicators */}
@@ -53,17 +53,6 @@ export function HeroSection() {
             </Button>
             <div className="text-xs text-muted-foreground mt-2 sm:mt-0 sm:ml-2">
               Limited spots available this month
-            </div>
-          </div>
-          
-          {/* Social proof */}
-          <div className="mt-10 pt-6 border-t border-border/30">
-            <p className="text-sm text-muted-foreground mb-3">Trusted by innovative businesses:</p>
-            <div className="flex flex-wrap justify-center items-center gap-6 opacity-70">
-              <div className="text-lg font-bold">TechCorp</div>
-              <div className="text-lg font-bold">GrowthIQ</div>
-              <div className="text-lg font-bold">InnovateSMB</div>
-              <div className="text-lg font-bold">FutureWorks</div>
             </div>
           </div>
         </div>

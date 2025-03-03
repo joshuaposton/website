@@ -25,21 +25,8 @@ export function ValuePropositionSection() {
     {
       icon: <Shield className="h-6 w-6" />,
       title: "Proven AI Strategies for SMBs",
-      description: "Benefit from our experience implementing AI for businesses just like yours.",
-      benefit: "200+ successful implementations"
-    }
-  ];
-
-  const testimonials = [
-    {
-      quote: "EchoFlow Labs helped us automate our customer service, reducing response times by 80% and increasing satisfaction scores.",
-      author: "Sarah J.",
-      company: "RetailTech Solutions"
-    },
-    {
-      quote: "We saw a 40% increase in qualified leads after implementing their AI-powered marketing solution.",
-      author: "Michael T.",
-      company: "GrowthForce Marketing"
+      description: "Benefit from our expertise in implementing AI for businesses just like yours.",
+      benefit: "Cutting-edge AI implementation"
     }
   ];
 
@@ -49,7 +36,7 @@ export function ValuePropositionSection() {
         <div className="mx-auto max-w-3xl text-center mb-12">
           <div className="inline-flex items-center gap-2 px-3 py-1 mb-4 rounded-full bg-primary/10 border border-primary/20 text-primary text-sm font-medium">
             <Star className="h-3.5 w-3.5" />
-            <span>Trusted by 200+ SMBs</span>
+            <span>Innovative AI Solutions</span>
           </div>
           
           <h2 className="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl mb-6">
@@ -60,7 +47,7 @@ export function ValuePropositionSection() {
           </p>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
           {valueProps.map((prop, index) => (
             <Card key={index} className="border border-border/50 bg-background/50 backdrop-blur-sm hover:border-primary/30 transition-all duration-300 group">
               <CardContent className="p-6">
@@ -80,28 +67,6 @@ export function ValuePropositionSection() {
               </CardContent>
             </Card>
           ))}
-        </div>
-        
-        {/* Testimonials */}
-        <div className="max-w-4xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {testimonials.map((testimonial, index) => (
-              <Card key={index} className="border border-primary/20 bg-primary/5">
-                <CardContent className="p-6">
-                  <div className="flex gap-1 mb-4">
-                    {[...Array(5)].map((_, i) => (
-                      <Star key={i} className="h-4 w-4 fill-primary text-primary" />
-                    ))}
-                  </div>
-                  <p className="italic mb-4">"{testimonial.quote}"</p>
-                  <div>
-                    <p className="font-medium">{testimonial.author}</p>
-                    <p className="text-sm text-muted-foreground">{testimonial.company}</p>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
         </div>
       </div>
     </section>
