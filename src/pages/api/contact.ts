@@ -12,17 +12,22 @@ type ContactFormData = {
 type ResponseData = {
   success: boolean;
   message: string;
+  error?: string;
 };
 
 // Create a transporter using privateemail.com SMTP settings
 const transporter = nodemailer.createTransport({
   host: "mail.privateemail.com",
-  port: 587,
-  secure: false, // true for 465, false for other ports
+  port: 465, // Changed from 587 to 465 which is the SSL port
+  secure: true, // Changed from false to true for SSL
   auth: {
-    user: "josh@echoflowlabs.com", // Your privateemail.com email
-    pass: process.env.EMAIL_PASSWORD, // Your email password stored in .env.local
+    user: "josh@echoflowlabs.com",
+    pass: process.env.EMAIL_PASSWORD,
   },
+  connectionTimeout: 10000, // 10 seconds timeout
+  greetingTimeout: 10000,
+  socketTimeout: 15000,
+  debug: true, // Enable debug logging
 });
 
 export default async function handler(
@@ -56,6 +61,13 @@ export default async function handler(
       });
     }
 
+    console.log("Attempting to send email with the following configuration:");
+    console.log(`- Host: mail.privateemail.com`);
+    console.log(`- Port: 465`);
+    console.log(`- Secure: true`);
+    console.log(`- Username: josh@echoflowlabs.com`);
+    console.log(`- Password length: ${process.env.EMAIL_PASSWORD?.length || 0} characters`);
+
     // Format the email content
     const emailContent = `
 Name: ${name}
@@ -87,17 +99,29 @@ ${message}
       `
     };
 
-    await transporter.sendMail(mailOptions);
+    console.log("Sending email with the following options:", JSON.stringify(mailOptions, null, 2));
+    
+    const info = await transporter.sendMail(mailOptions);
+    console.log("Email sent successfully:", info.response);
+    console.log("Message ID:", info.messageId);
 
     return res.status(200).json({ 
       success: true, 
       message: "Message sent successfully" 
     });
-  } catch (error) {
-    console.error("Error processing contact form:", error);
+  } catch (error: any) {
+    console.error("Error processing contact form:");
+    console.error(error);
+    
+    // Log detailed error information
+    if (error.code) console.error("Error code:", error.code);
+    if (error.command) console.error("Failed command:", error.command);
+    if (error.response) console.error("Server response:", error.response);
+    
     return res.status(500).json({ 
       success: false, 
-      message: "Failed to send message. Please try again later." 
+      message: "Failed to send message. Please try again later.",
+      error: error.message || "Unknown error"
     });
   }
 }

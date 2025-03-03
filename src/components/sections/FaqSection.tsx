@@ -16,6 +16,7 @@ export function FaqSection() {
     businessName: "",
     message: ""
   });
+  const [errorDetails, setErrorDetails] = useState<string | null>(null);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
@@ -24,6 +25,7 @@ export function FaqSection() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setErrorDetails(null);
     
     // Basic validation
     if (!formData.name || !formData.email || !formData.message) {
@@ -62,6 +64,11 @@ export function FaqSection() {
           message: ""
         });
       } else {
+        // Store detailed error if available
+        if (data.error) {
+          setErrorDetails(data.error);
+        }
+        
         toast({
           title: "Something went wrong",
           description: data.message || "Failed to send message. Please try again.",
@@ -69,6 +76,7 @@ export function FaqSection() {
         });
       }
     } catch (error) {
+      console.error("Form submission error:", error);
       toast({
         title: "Error",
         description: "Failed to send message. Please try again later.",
@@ -178,6 +186,13 @@ export function FaqSection() {
                       >
                         {isSubmitting ? "Sending..." : "Send Message"}
                       </Button>
+                      
+                      {errorDetails && (
+                        <div className="mt-4 p-3 bg-red-50 border border-red-200 rounded-md text-sm text-red-600">
+                          <p className="font-medium">Technical error details:</p>
+                          <p className="mt-1">{errorDetails}</p>
+                        </div>
+                      )}
                     </div>
                   </form>
                 </CardContent>
