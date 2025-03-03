@@ -15,7 +15,7 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>AImplement | AI Solutions for Small & Medium Businesses</title>
+        <title>EchoFlow Labs | AI Solutions for Small & Medium Businesses</title>
         <meta name="description" content="Unlock efficiency, automate workflows, and gain insights with AI solutions tailored for small and medium businesses. Get started with a free AI strategy call." />
         <link rel="icon" href="/favicon.ico" />
       </Head>
