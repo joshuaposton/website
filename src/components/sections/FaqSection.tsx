@@ -1,11 +1,84 @@
 
+import { useState } from "react";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Card, CardContent } from "@/components/ui/card";
+import { useToast } from "@/hooks/use-toast";
 
 export function FaqSection() {
+  const { toast } = useToast();
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    businessName: "",
+    message: ""
+  });
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({ ...prev, [name]: value }));
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    
+    // Basic validation
+    if (!formData.name || !formData.email || !formData.message) {
+      toast({
+        title: "Missing information",
+        description: "Please fill in all required fields.",
+        variant: "destructive"
+      });
+      return;
+    }
+
+    setIsSubmitting(true);
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await response.json();
+
+      if (data.success) {
+        toast({
+          title: "Message sent!",
+          description: "We'll get back to you as soon as possible.",
+        });
+        
+        // Reset form
+        setFormData({
+          name: "",
+          email: "",
+          businessName: "",
+          message: ""
+        });
+      } else {
+        toast({
+          title: "Something went wrong",
+          description: data.message || "Failed to send message. Please try again.",
+          variant: "destructive"
+        });
+      }
+    } catch (error) {
+      toast({
+        title: "Error",
+        description: "Failed to send message. Please try again later.",
+        variant: "destructive"
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   const faqs = [
     {
       question: "What size businesses do you work with?",
@@ -59,22 +132,51 @@ export function FaqSection() {
                   <p className="text-muted-foreground mb-6">
                     Have a specific question or ready to explore how AI can help your business? Get in touch with our team.
                   </p>
-                  <form className="space-y-4">
+                  <form onSubmit={handleSubmit} className="space-y-4">
                     <div className="grid grid-cols-1 gap-4">
                       <div>
-                        <Input placeholder="Name" />
+                        <Input 
+                          name="name"
+                          placeholder="Name" 
+                          value={formData.name}
+                          onChange={handleChange}
+                          required
+                        />
                       </div>
                       <div>
-                        <Input placeholder="Email" type="email" />
+                        <Input 
+                          name="email"
+                          placeholder="Email" 
+                          type="email" 
+                          value={formData.email}
+                          onChange={handleChange}
+                          required
+                        />
                       </div>
                       <div>
-                        <Input placeholder="Business Name" />
+                        <Input 
+                          name="businessName"
+                          placeholder="Business Name" 
+                          value={formData.businessName}
+                          onChange={handleChange}
+                        />
                       </div>
                       <div>
-                        <Textarea placeholder="Message" rows={4} />
+                        <Textarea 
+                          name="message"
+                          placeholder="Message" 
+                          rows={4} 
+                          value={formData.message}
+                          onChange={handleChange}
+                          required
+                        />
                       </div>
-                      <Button type="submit" className="w-full">
-                        Send Message
+                      <Button 
+                        type="submit" 
+                        className="w-full"
+                        disabled={isSubmitting}
+                      >
+                        {isSubmitting ? "Sending..." : "Send Message"}
                       </Button>
                     </div>
                   </form>
