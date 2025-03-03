@@ -38,18 +38,6 @@ export function HeroSection() {
               <ArrowRight className="ml-2 h-5 w-5 transition-transform duration-300 group-hover:translate-x-1" />
             </Button>
           </div>
-          
-          <div className="mt-16 flex flex-wrap justify-center gap-8 text-muted-foreground">
-            <div className="flex items-center">
-              <div className="h-8 w-px bg-border"></div>
-              <div className="ml-8 flex items-center gap-6">
-                <img src="https://images.unsplash.com/photo-1633409361618-c73427e4e206?ixlib=rb-4.0.3&auto=format&fit=crop&w=80&h=40&q=80" alt="Client logo" className="h-10 w-auto grayscale opacity-70 hover:opacity-100 hover:grayscale-0 transition-all duration-300" />
-                <img src="https://images.unsplash.com/photo-1633409361618-c73427e4e206?ixlib=rb-4.0.3&auto=format&fit=crop&w=80&h=40&q=80" alt="Client logo" className="h-10 w-auto grayscale opacity-70 hover:opacity-100 hover:grayscale-0 transition-all duration-300" />
-                <img src="https://images.unsplash.com/photo-1633409361618-c73427e4e206?ixlib=rb-4.0.3&auto=format&fit=crop&w=80&h=40&q=80" alt="Client logo" className="h-10 w-auto grayscale opacity-70 hover:opacity-100 hover:grayscale-0 transition-all duration-300" />
-              </div>
-              <div className="ml-8 h-8 w-px bg-border"></div>
-            </div>
-          </div>
         </div>
       </div>
       
