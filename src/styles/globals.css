@@ -1,75 +1,70 @@
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: 'Inter', sans-serif;
-}
-
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
-}
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+@import './animations.css';
 
 @layer base {
   :root {
     --background: 210 40% 98%;
     --foreground: 222 47% 11%;
+    
     --card: 0 0% 100%;
     --card-foreground: 222 47% 11%;
+    
     --popover: 0 0% 100%;
     --popover-foreground: 222 47% 11%;
-    --primary: 224 76% 48%;
+    
+    --primary: 221 83% 53%;
     --primary-foreground: 210 40% 98%;
-    --secondary: 220 70% 22%;
-    --secondary-foreground: 210 40% 98%;
+    
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222 47% 11%;
+    
     --muted: 210 40% 96.1%;
     --muted-foreground: 215 16% 47%;
-    --accent: 196 94% 48%;
+    
+    --accent: 262 83% 58%;
     --accent-foreground: 210 40% 98%;
+    
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
+    
     --border: 214 32% 91%;
     --input: 214 32% 91%;
-    --ring: 224 76% 48%;
+    --ring: 221 83% 53%;
+    
     --radius: 0.75rem;
   }
+ 
   .dark {
-    --background: 222 47% 6%;
+    --background: 222 47% 11%;
     --foreground: 210 40% 98%;
-    --card: 222 47% 8%;
+    
+    --card: 222 47% 11%;
     --card-foreground: 210 40% 98%;
-    --popover: 222 47% 8%;
+    
+    --popover: 222 47% 11%;
     --popover-foreground: 210 40% 98%;
-    --primary: 224 76% 55%;
+    
+    --primary: 217 91% 60%;
     --primary-foreground: 222 47% 11%;
-    --secondary: 220 70% 22%;
+    
+    --secondary: 217 32% 17%;
     --secondary-foreground: 210 40% 98%;
-    --muted: 222 47% 11%;
-    --muted-foreground: 215 20% 65%;
-    --accent: 196 94% 48%;
+    
+    --muted: 217 32% 17%;
+    --muted-foreground: 215 20.2% 65.1%;
+    
+    --accent: 262 83% 58%;
     --accent-foreground: 210 40% 98%;
+    
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 210 40% 98%;
-    --border: 222 47% 14%;
-    --input: 222 47% 14%;
-    --ring: 224 76% 55%;
+    
+    --border: 217 32% 17%;
+    --input: 217 32% 17%;
+    --ring: 224 76% 48%;
   }
 }
 
@@ -79,81 +74,18 @@ body {
   }
   body {
     @apply bg-background text-foreground;
-  }
-}
-
-@layer components {
-  .container {
-    @apply mx-auto px-4 md:px-6 lg:px-8 max-w-7xl w-full;
-  }
-  
-  .gradient-text {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary via-accent to-primary;
-  }
-  
-  .btn-primary {
-    @apply bg-primary text-primary-foreground hover:bg-primary/90 inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none ring-offset-background;
-  }
-  
-  .btn-secondary {
-    @apply bg-secondary text-secondary-foreground hover:bg-secondary/80;
-  }
-  
-  .card-hover {
-    @apply transition-all duration-300 hover:shadow-lg hover:-translate-y-1 hover:border-primary/30 relative;
+    font-feature-settings: "rlig" 1, "calt" 1;
   }
   
   .section-padding {
-    @apply py-16 md:py-24 lg:py-32;
+    @apply py-16 md:py-20 lg:py-24;
   }
   
-  .bg-grid-pattern {
-    background-size: 50px 50px;
-    background-image: 
-      linear-gradient(to right, rgba(var(--primary), 0.05) 1px, transparent 1px),
-      linear-gradient(to bottom, rgba(var(--primary), 0.05) 1px, transparent 1px);
+  .gradient-text {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary to-accent;
   }
   
-  .glow-effect {
-    @apply relative;
-  }
-  
-  .glow-effect::after {
-    content: "";
-    @apply absolute -inset-0.5 rounded-lg bg-gradient-to-r from-primary via-accent to-primary opacity-0 transition duration-300 blur-xl;
-    z-index: -1;
-  }
-  
-  .glow-effect:hover::after {
-    @apply opacity-30;
-  }
-  
-  .animate-float {
-    animation: float 6s ease-in-out infinite;
-  }
-  
-  @keyframes float {
-    0% {
-      transform: translateY(0px);
-    }
-    50% {
-      transform: translateY(-20px);
-    }
-    100% {
-      transform: translateY(0px);
-    }
-  }
-  
-  .animate-pulse {
-    animation: pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
-  }
-  
-  @keyframes pulse {
-    0%, 100% {
-      opacity: 0.2;
-    }
-    50% {
-      opacity: 0.5;
-    }
+  .card-hover {
+    @apply relative transition-all duration-300 hover:shadow-lg hover:shadow-primary/10 hover:-translate-y-1;
   }
 }

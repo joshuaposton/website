@@ -4,8 +4,9 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { useToast } from "@/hooks/use-toast";
+import { CheckCircle2, Clock, Calendar, ArrowRight, Shield, Star } from "lucide-react";
 
 export function FaqSection() {
   const { toast } = useToast();
@@ -117,7 +118,7 @@ export function FaqSection() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             <div>
               <h2 className="text-3xl font-bold tracking-tight mb-6">
-                Still Have Questions?
+                Common Questions About <span className="gradient-text">AI Implementation</span>
               </h2>
               <Accordion type="single" collapsible className="w-full">
                 {faqs.map((faq, index) => (
@@ -131,70 +132,123 @@ export function FaqSection() {
                   </AccordionItem>
                 ))}
               </Accordion>
+              
+              <div className="mt-8 p-4 bg-primary/5 border border-primary/20 rounded-lg">
+                <div className="flex items-start gap-3">
+                  <div className="flex-shrink-0 text-primary mt-1">
+                    <CheckCircle2 className="h-5 w-5" />
+                  </div>
+                  <div>
+                    <p className="font-medium">Still have questions?</p>
+                    <p className="text-sm text-muted-foreground">
+                      Schedule a free 30-minute consultation with our AI experts to get answers to your specific questions.
+                    </p>
+                    <Button variant="link" className="px-0 text-primary flex items-center gap-1 mt-1 group">
+                      <span>Book a call</span>
+                      <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
+                    </Button>
+                  </div>
+                </div>
+              </div>
             </div>
             
             <div>
-              <Card className="border-2">
+              <Card className="border-2 border-primary/20 overflow-hidden">
+                <CardHeader className="bg-primary/10 p-6 border-b border-primary/20">
+                  <div className="flex items-center justify-between">
+                    <h3 className="text-2xl font-bold">Get Started Today</h3>
+                    <div className="flex items-center gap-2 text-sm">
+                      <Clock className="h-4 w-4 text-primary" />
+                      <span>Response within 24hrs</span>
+                    </div>
+                  </div>
+                </CardHeader>
                 <CardContent className="p-6">
-                  <h3 className="text-2xl font-bold mb-4">Contact Us</h3>
-                  <p className="text-muted-foreground mb-6">
-                    Have a specific question or ready to explore how AI can help your business? Get in touch with our team.
-                  </p>
+                  <div className="flex items-center gap-3 mb-6">
+                    <div className="flex-shrink-0 h-10 w-10 rounded-full bg-primary/10 flex items-center justify-center text-primary">
+                      <Calendar className="h-5 w-5" />
+                    </div>
+                    <div>
+                      <p className="font-medium">Request your free AI strategy session</p>
+                      <p className="text-sm text-muted-foreground">
+                        Or ask us a specific question about your business needs
+                      </p>
+                    </div>
+                  </div>
+                  
                   <form onSubmit={handleSubmit} className="space-y-4">
                     <div className="grid grid-cols-1 gap-4">
                       <div>
                         <Input 
                           name="name"
-                          placeholder="Name" 
+                          placeholder="Your Name" 
                           value={formData.name}
                           onChange={handleChange}
                           required
+                          className="border-primary/20 focus:border-primary"
                         />
                       </div>
                       <div>
                         <Input 
                           name="email"
-                          placeholder="Email" 
+                          placeholder="Work Email" 
                           type="email" 
                           value={formData.email}
                           onChange={handleChange}
                           required
+                          className="border-primary/20 focus:border-primary"
                         />
                       </div>
                       <div>
                         <Input 
                           name="businessName"
-                          placeholder="Business Name" 
+                          placeholder="Company Name" 
                           value={formData.businessName}
                           onChange={handleChange}
+                          className="border-primary/20 focus:border-primary"
                         />
                       </div>
                       <div>
                         <Textarea 
                           name="message"
-                          placeholder="Message" 
-                          rows={4} 
+                          placeholder="How can we help your business with AI?" 
+                          rows={3} 
                           value={formData.message}
                           onChange={handleChange}
                           required
+                          className="border-primary/20 focus:border-primary"
                         />
                       </div>
                       <Button 
                         type="submit" 
-                        className="w-full"
+                        className="w-full py-6 text-base font-medium rounded-full group relative overflow-hidden"
                         disabled={isSubmitting}
                       >
-                        {isSubmitting ? "Sending..." : "Send Message"}
+                        <span className="relative z-10">{isSubmitting ? "Sending..." : "Request Free Consultation"}</span>
+                        <ArrowRight className="ml-2 h-5 w-5 relative z-10 transition-transform duration-300 group-hover:translate-x-1" />
+                        <div className="absolute inset-0 bg-gradient-to-r from-primary to-accent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                       </Button>
                       
-                      {errorDetails && (
-                        <div className="mt-4 p-3 bg-red-50 border border-red-200 rounded-md text-sm text-red-600">
-                          <p className="font-medium">Technical error details:</p>
-                          <p className="mt-1">{errorDetails}</p>
-                        </div>
-                      )}
+                      <div className="flex items-center justify-center gap-2 text-xs text-muted-foreground">
+                        <Shield className="h-3.5 w-3.5" />
+                        <span>Your information is secure and will never be shared</span>
+                      </div>
+                      
+                      <div className="flex items-center justify-center gap-1 mt-2">
+                        {[...Array(5)].map((_, i) => (
+                          <Star key={i} className="h-3.5 w-3.5 fill-amber-400 text-amber-400" />
+                        ))}
+                        <span className="text-xs ml-1 text-muted-foreground">Rated 4.9/5 by our clients</span>
+                      </div>
                     </div>
                   </form>
+                  
+                  {errorDetails && (
+                    <div className="mt-4 p-3 bg-red-50 border border-red-200 rounded-md text-sm text-red-600">
+                      <p className="font-medium">Technical error details:</p>
+                      <p className="mt-1">{errorDetails}</p>
+                    </div>
+                  )}
                 </CardContent>
               </Card>
             </div>
