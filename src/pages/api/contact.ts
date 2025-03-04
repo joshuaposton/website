@@ -17,25 +17,19 @@ type ResponseData = {
   error?: string;
 };
 
-// Create a transporter using privateemail.com SMTP settings with improved configuration
 const transporter = nodemailer.createTransport({
-  host: "mail.privateemail.com",
+  host: "smtp.gmail.com",
   port: 465,
   secure: true,
   auth: {
     user: "josh@echoflowlabs.com",
     pass: process.env.EMAIL_PASSWORD,
   },
-  connectionTimeout: 5000, // Reduced timeout for faster failure detection
+  connectionTimeout: 5000,
   greetingTimeout: 5000,
   socketTimeout: 5000,
-  debug: true,
-  tls: {
-    rejectUnauthorized: false // This helps with some SSL certificate issues
-  }
 });
 
-// Verify the transporter connection before using it
 async function verifyTransporter() {
   try {
     await transporter.verify();
@@ -46,20 +40,17 @@ async function verifyTransporter() {
   }
 }
 
-// Function to save email to a local file for development purposes
 async function saveEmailLocally(mailOptions: any) {
   try {
     const timestamp = new Date().toISOString().replace(/[:.]/g, "-");
     const fileName = `contact-form-${timestamp}.json`;
     const filePath = path.join(process.cwd(), "logs", fileName);
     
-    // Create logs directory if it doesn't exist
     const logsDir = path.join(process.cwd(), "logs");
     if (!fs.existsSync(logsDir)) {
       fs.mkdirSync(logsDir, { recursive: true });
     }
     
-    // Write email content to file
     fs.writeFileSync(
       filePath,
       JSON.stringify(mailOptions, null, 2)
@@ -77,7 +68,6 @@ export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse<ResponseData>
 ) {
-  // Only allow POST requests
   if (req.method !== "POST") {
     return res.status(405).json({ 
       success: false, 
@@ -88,7 +78,6 @@ export default async function handler(
   try {
     const { name, email, businessName, message } = req.body as ContactFormData;
 
-    // Basic validation
     if (!name || !email || !message) {
       return res.status(400).json({ 
         success: false, 
@@ -105,7 +94,6 @@ export default async function handler(
       });
     }
 
-    // Format the email content
     const emailContent = `
 Name: ${name}
 Email: ${email}
@@ -115,7 +103,6 @@ Message:
 ${message}
     `;
 
-    // HTML version of the email
     const htmlContent = `
       <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
         <h2 style="color: #3b82f6;">New Contact Form Submission</h2>
@@ -129,7 +116,6 @@ ${message}
       </div>
     `;
 
-    // Mail options
     const mailOptions = {
       from: `"EchoFlow Labs Website" <josh@echoflowlabs.com>`,
       to: "josh@echoflowlabs.com",
@@ -141,41 +127,24 @@ ${message}
 
     console.log("Attempting to send email...");
     
-    // First verify the transporter
     const isTransporterValid = await verifyTransporter();
     let emailSent = false;
     
     if (isTransporterValid) {
       try {
-        // Send the email with a timeout
-        const emailSendPromise = transporter.sendMail(mailOptions);
-        
-        // Create a timeout promise
-        const timeoutPromise = new Promise((_, reject) => {
-          setTimeout(() => {
-            reject(new Error("Email sending timed out after 10 seconds"));
-          }, 10000);
-        });
-        
-        // Race the email sending against the timeout
-        const info = await Promise.race([emailSendPromise, timeoutPromise]) as nodemailer.SentMessageInfo;
-        
+        const info = await transporter.sendMail(mailOptions);
         console.log("Email sent successfully:", info.response);
         console.log("Message ID:", info.messageId);
         emailSent = true;
       } catch (error) {
         console.error("Failed to send email via SMTP:", error);
-        // We'll fall back to local storage
       }
     }
     
-    // If email sending failed, save it locally for development purposes
     if (!emailSent) {
       console.log("SMTP email sending failed. Saving email locally for development...");
       await saveEmailLocally(mailOptions);
       
-      // For development, we'll still return success to the frontend
-      // This allows testing the form without SMTP connection
       if (process.env.NODE_ENV === "development") {
         return res.status(200).json({
           success: true,
@@ -183,7 +152,6 @@ ${message}
           error: "Email not sent via SMTP due to connection issues. This is normal in local development."
         });
       } else {
-        // In production, we should return an error
         throw new Error("Failed to send email via SMTP");
       }
     }
@@ -193,27 +161,24 @@ ${message}
       message: "Message sent successfully" 
     });
   } catch (error: any) {
-    console.error("Error processing contact form:");
-    console.error(error);
+    console.error("Error processing contact form:", error);
     
-    // Log detailed error information
     if (error.code) console.error("Error code:", error.code);
     if (error.command) console.error("Failed command:", error.command);
     if (error.response) console.error("Server response:", error.response);
     
-    // Provide a more specific error message based on the error type
     let errorMessage = "Failed to send message. Please try again later.";
     let errorDetail = error.message || "Unknown error";
     
     if (error.code === "ETIMEDOUT" || error.message?.includes("timed out")) {
-      errorMessage = "Connection to email server timed out. This is likely due to network restrictions.";
-      errorDetail = "This is common in local development environments where SMTP connections are often blocked.";
+      errorMessage = "Connection to email server timed out. Please try again.";
+      errorDetail = "The server took too long to respond.";
     } else if (error.code === "EAUTH") {
       errorMessage = "Email authentication failed.";
       errorDetail = "Please check your email credentials.";
     } else if (error.code === "ESOCKET") {
       errorMessage = "Network connection issue when contacting email server.";
-      errorDetail = "This may be due to firewall or network restrictions.";
+      errorDetail = "Please check your internet connection and try again.";
     }
     
     return res.status(500).json({ 

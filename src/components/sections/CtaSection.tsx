@@ -2,8 +2,13 @@
 import { Button } from "@/components/ui/button";
 import { Clock, Zap, ArrowRight } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
+import { ContactForm } from "@/components/sections/ContactForm";
+import { useState } from "react";
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 
 export function CtaSection() {
+  const [isDialogOpen, setIsDialogOpen] = useState(false);
+
   return (
     <section className="section-padding bg-primary/5 relative overflow-hidden">
       <div className="absolute -top-24 -right-24 w-64 h-64 rounded-full bg-primary/10 blur-3xl"></div>
@@ -47,11 +52,21 @@ export function CtaSection() {
                 </div>
               </div>
               
-              <Button size="lg" className="text-base font-medium px-8 py-6 rounded-full group relative overflow-hidden">
-                <span className="relative z-10">Schedule Your Free AI Strategy Call</span>
-                <ArrowRight className="ml-2 h-5 w-5 relative z-10 transition-transform duration-300 group-hover:translate-x-1" />
-                <div className="absolute inset-0 bg-gradient-to-r from-primary to-accent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-              </Button>
+              <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
+                <DialogTrigger asChild>
+                  <Button size="lg" className="text-base font-medium px-8 py-6 rounded-full group relative overflow-hidden">
+                    <span className="relative z-10">Schedule Your Free AI Strategy Call</span>
+                    <ArrowRight className="ml-2 h-5 w-5 relative z-10 transition-transform duration-300 group-hover:translate-x-1" />
+                    <div className="absolute inset-0 bg-gradient-to-r from-primary to-accent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  </Button>
+                </DialogTrigger>
+                <DialogContent className="sm:max-w-[500px]">
+                  <DialogHeader>
+                    <DialogTitle>Schedule Your Free AI Strategy Call</DialogTitle>
+                  </DialogHeader>
+                  <ContactForm />
+                </DialogContent>
+              </Dialog>
             </div>
             
             <div className="md:col-span-2">
