@@ -18,11 +18,11 @@ type ResponseData = {
 };
 
 const transporter = nodemailer.createTransport({
-  host: "smtp.gmail.com",
-  port: 465,
+  host: process.env.EMAIL_HOST,
+  port: Number(process.env.EMAIL_PORT),
   secure: true,
   auth: {
-    user: "josh@echoflowlabs.com",
+    user: process.env.EMAIL_USER,
     pass: process.env.EMAIL_PASSWORD,
   },
   connectionTimeout: 5000,
@@ -85,12 +85,15 @@ export default async function handler(
       });
     }
 
-    if (!process.env.EMAIL_PASSWORD) {
-      console.error("EMAIL_PASSWORD environment variable is not set");
+    const requiredEnvVars = ["EMAIL_HOST", "EMAIL_PORT", "EMAIL_USER", "EMAIL_PASSWORD"];
+    const missingVars = requiredEnvVars.filter(varName => !process.env[varName]);
+
+    if (missingVars.length > 0) {
+      console.error(`Missing environment variables: ${missingVars.join(", ")}`);
       return res.status(500).json({
         success: false,
         message: "Email configuration error. Please contact the administrator.",
-        error: "Missing email password configuration"
+        error: `Missing configuration: ${missingVars.join(", ")}`
       });
     }
 
@@ -117,8 +120,8 @@ ${message}
     `;
 
     const mailOptions = {
-      from: `"EchoFlow Labs Website" <josh@echoflowlabs.com>`,
-      to: "josh@echoflowlabs.com",
+      from: `"EchoFlow Labs Website" <${process.env.EMAIL_USER}>`,
+      to: process.env.EMAIL_USER,
       replyTo: email,
       subject: `New Contact Form Submission from ${name}`,
       text: emailContent,
@@ -174,7 +177,7 @@ ${message}
       errorMessage = "Connection to email server timed out. Please try again.";
       errorDetail = "The server took too long to respond.";
     } else if (error.code === "EAUTH") {
-      errorMessage = "Email authentication failed.";
+      errorMessage = "Email authentication failed. Please make sure you're using an App Password from Google Account settings.";
       errorDetail = "Please check your email credentials.";
     } else if (error.code === "ESOCKET") {
       errorMessage = "Network connection issue when contacting email server.";
