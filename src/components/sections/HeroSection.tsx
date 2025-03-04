@@ -1,14 +1,18 @@
 
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { Sparkles, ArrowRight, Zap, CheckCircle } from "lucide-react";
+import { Sparkles, Zap, CheckCircle } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
+import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
+import { ContactForm } from "@/components/sections/ContactForm";
 
 export function HeroSection() {
+  const [isDialogOpen, setIsDialogOpen] = useState(false);
+
   return (
     <section className="relative overflow-hidden bg-background py-20 md:py-28 lg:py-36">
       <div className="absolute inset-0 bg-grid-pattern opacity-10"></div>
       
-      {/* Animated background elements */}
       <div className="absolute -bottom-48 left-1/2 -translate-x-1/2 w-[800px] h-[800px] rounded-full bg-primary/10 blur-3xl animate-pulse"></div>
       <div className="absolute -top-48 right-0 w-[600px] h-[600px] rounded-full bg-accent/10 blur-3xl animate-pulse" style={{ animationDelay: "1s" }}></div>
       <div className="absolute top-1/4 left-1/4 w-4 h-4 rounded-full bg-primary/80 animate-ping"></div>
@@ -29,7 +33,6 @@ export function HeroSection() {
             Unlock the power of AI to cut costs, automate workflows, and drive measurable business growth for your company.
           </p>
           
-          {/* Trust indicators */}
           <div className="flex flex-wrap items-center justify-center gap-3 mb-8">
             <div className="flex items-center text-sm text-muted-foreground">
               <CheckCircle className="h-4 w-4 mr-1.5 text-green-500" />
@@ -46,7 +49,11 @@ export function HeroSection() {
           </div>
           
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <Button size="lg" className="w-full sm:w-auto text-base font-medium px-8 py-6 rounded-full shadow-lg shadow-primary/20 hover:shadow-xl hover:shadow-primary/30 transition-all duration-300 group relative overflow-hidden">
+            <Button 
+              size="lg" 
+              onClick={() => setIsDialogOpen(true)}
+              className="w-full sm:w-auto text-base font-medium px-8 py-6 rounded-full shadow-lg shadow-primary/20 hover:shadow-xl hover:shadow-primary/30 transition-all duration-300 group relative overflow-hidden"
+            >
               <span className="relative z-10">Claim Your Free AI Strategy Call</span>
               <Zap className="ml-2 h-5 w-5 relative z-10 group-hover:animate-pulse" />
               <div className="absolute inset-0 bg-gradient-to-r from-primary to-accent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
@@ -59,6 +66,15 @@ export function HeroSection() {
       </div>
       
       <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-background to-transparent"></div>
+
+      <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
+        <DialogContent className="sm:max-w-[500px]">
+          <DialogHeader>
+            <DialogTitle>Schedule Your Free AI Strategy Call</DialogTitle>
+          </DialogHeader>
+          <ContactForm />
+        </DialogContent>
+      </Dialog>
     </section>
   );
 }
