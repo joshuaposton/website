@@ -25,14 +25,18 @@ const transporter = nodemailer.createTransport({
     user: process.env.EMAIL_USER,
     pass: process.env.EMAIL_PASSWORD,
   },
-  connectionTimeout: 5000,
-  greetingTimeout: 5000,
-  socketTimeout: 5000,
+  debug: true, // Enable debug logs
+  logger: true, // Enable logger
 });
 
 async function verifyTransporter() {
   try {
+    console.log("Verifying email configuration...");
+    console.log("Host:", process.env.EMAIL_HOST);
+    console.log("Port:", process.env.EMAIL_PORT);
+    console.log("User:", process.env.EMAIL_USER);
     await transporter.verify();
+    console.log("Email configuration verified successfully");
     return true;
   } catch (error) {
     console.error("Failed to verify email transporter:", error);
@@ -68,6 +72,8 @@ export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse<ResponseData>
 ) {
+  console.log("Received contact form submission");
+  
   if (req.method !== "POST") {
     return res.status(405).json({ 
       success: false, 
@@ -77,6 +83,7 @@ export default async function handler(
 
   try {
     const { name, email, businessName, message } = req.body as ContactFormData;
+    console.log("Processing submission from:", name, email);
 
     if (!name || !email || !message) {
       return res.status(400).json({ 
@@ -141,6 +148,7 @@ ${message}
         emailSent = true;
       } catch (error) {
         console.error("Failed to send email via SMTP:", error);
+        console.error("Error details:", error);
       }
     }
     
