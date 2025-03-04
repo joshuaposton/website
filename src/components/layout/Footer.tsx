@@ -1,5 +1,5 @@
 
-import { Facebook, Twitter, Linkedin, Instagram, Sparkles } from "lucide-react";
+import { Sparkles } from "lucide-react";
 
 export function Footer() {
   return (
@@ -19,23 +19,9 @@ export function Footer() {
                 <span className="text-accent">Flow</span> Labs
               </span>
             </div>
-            <p className="text-muted-foreground max-w-md mb-4">
+            <p className="text-muted-foreground max-w-md">
               We help small and medium businesses implement AI solutions that drive growth, efficiency, and innovation.
             </p>
-            <div className="flex space-x-4">
-              <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
-                <Facebook className="h-5 w-5" />
-              </a>
-              <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
-                <Twitter className="h-5 w-5" />
-              </a>
-              <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
-                <Linkedin className="h-5 w-5" />
-              </a>
-              <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
-                <Instagram className="h-5 w-5" />
-              </a>
-            </div>
           </div>
           
           <div>
@@ -76,38 +62,6 @@ export function Footer() {
           
           <div>
             <h3 className="font-semibold mb-4">Company</h3>
-            <ul className="space-y-2">
-              <li>
-                <a href="#" className="text-muted-foreground hover:text-primary transition-colors flex items-center gap-2 group">
-                  <span className="h-1 w-1 rounded-full bg-primary/50 group-hover:w-2 transition-all duration-300"></span>
-                  About Us
-                </a>
-              </li>
-              <li>
-                <a href="#" className="text-muted-foreground hover:text-primary transition-colors flex items-center gap-2 group">
-                  <span className="h-1 w-1 rounded-full bg-primary/50 group-hover:w-2 transition-all duration-300"></span>
-                  Case Studies
-                </a>
-              </li>
-              <li>
-                <a href="#" className="text-muted-foreground hover:text-primary transition-colors flex items-center gap-2 group">
-                  <span className="h-1 w-1 rounded-full bg-primary/50 group-hover:w-2 transition-all duration-300"></span>
-                  Blog
-                </a>
-              </li>
-              <li>
-                <a href="#" className="text-muted-foreground hover:text-primary transition-colors flex items-center gap-2 group">
-                  <span className="h-1 w-1 rounded-full bg-primary/50 group-hover:w-2 transition-all duration-300"></span>
-                  Careers
-                </a>
-              </li>
-              <li>
-                <a href="#" className="text-muted-foreground hover:text-primary transition-colors flex items-center gap-2 group">
-                  <span className="h-1 w-1 rounded-full bg-primary/50 group-hover:w-2 transition-all duration-300"></span>
-                  Contact
-                </a>
-              </li>
-            </ul>
           </div>
         </div>
         
