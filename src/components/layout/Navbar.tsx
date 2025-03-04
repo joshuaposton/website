@@ -3,9 +3,12 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Menu, Sparkles } from "lucide-react";
+import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
+import { ContactForm } from "@/components/sections/ContactForm";
 
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const [isDialogOpen, setIsDialogOpen] = useState(false);
 
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
@@ -48,13 +51,22 @@ export function Navbar() {
           </a>
         </nav>
         
-        <div className="hidden md:flex items-center gap-4">
-          <Button variant="outline" size="sm" className="rounded-full px-4 hover:border-primary hover:text-primary transition-all duration-300">
-            Contact Us
-          </Button>
-          <Button size="sm" className="rounded-full px-4 shadow-md shadow-primary/20 hover:shadow-lg hover:shadow-primary/30 transition-all duration-300 bg-gradient-to-r from-primary to-accent hover:from-primary/90 hover:to-accent/90">
-            Get Started
-          </Button>
+        <div className="hidden md:flex items-center">
+          <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
+            <Button 
+              onClick={() => setIsDialogOpen(true)}
+              size="sm" 
+              className="rounded-full px-4 shadow-md shadow-primary/20 hover:shadow-lg hover:shadow-primary/30 transition-all duration-300 bg-gradient-to-r from-primary to-accent hover:from-primary/90 hover:to-accent/90"
+            >
+              Get Started
+            </Button>
+            <DialogContent className="sm:max-w-[500px]">
+              <DialogHeader>
+                <DialogTitle>Schedule Your Free AI Strategy Call</DialogTitle>
+              </DialogHeader>
+              <ContactForm />
+            </DialogContent>
+          </Dialog>
         </div>
         
         <Sheet open={isOpen} onOpenChange={setIsOpen}>
@@ -114,12 +126,28 @@ export function Navbar() {
                 FAQ
               </a>
               <div className="flex flex-col gap-3 mt-6">
-                <Button variant="outline" className="w-full rounded-full">Contact Us</Button>
-                <Button className="w-full rounded-full shadow-md shadow-primary/20 bg-gradient-to-r from-primary to-accent">Get Started</Button>
+                <Button 
+                  className="w-full rounded-full shadow-md shadow-primary/20 bg-gradient-to-r from-primary to-accent"
+                  onClick={() => {
+                    setIsOpen(false);
+                    setIsDialogOpen(true);
+                  }}
+                >
+                  Get Started
+                </Button>
               </div>
             </div>
           </SheetContent>
         </Sheet>
+
+        <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
+          <DialogContent className="sm:max-w-[500px]">
+            <DialogHeader>
+              <DialogTitle>Schedule Your Free AI Strategy Call</DialogTitle>
+            </DialogHeader>
+            <ContactForm />
+          </DialogContent>
+        </Dialog>
       </div>
     </header>
   );
