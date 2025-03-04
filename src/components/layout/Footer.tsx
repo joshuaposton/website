@@ -5,7 +5,7 @@ export function Footer() {
   return (
     <footer className="bg-muted/30 border-t">
       <div className="container py-12 md:py-16">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div className="md:col-span-2">
             <div className="flex items-center gap-3 mb-4">
               <div className="relative overflow-hidden h-10 w-10">
@@ -58,10 +58,6 @@ export function Footer() {
                 </a>
               </li>
             </ul>
-          </div>
-          
-          <div>
-            <h3 className="font-semibold mb-4">Company</h3>
           </div>
         </div>
         
