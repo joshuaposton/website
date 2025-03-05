@@ -1,0 +1,8 @@
+{
+  "from": "\"EchoFlow Labs Website\" <josh@echoflowlabs.com>",
+  "to": "josh@echoflowlabs.com",
+  "replyTo": "JoshL.Poston@gmail.com",
+  "subject": "New Contact Form Submission from Josh",
+  "text": "\nName: Josh\nEmail: JoshL.Poston@gmail.com\nBusiness: Google\n\nMessage:\nashfdoahnfoi\n    ",
+  "html": "\n      <div style=\"font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;\">\n        <h2 style=\"color: #3b82f6;\">New Contact Form Submission</h2>\n        <p><strong>Name:</strong> Josh</p>\n        <p><strong>Email:</strong> JoshL.Poston@gmail.com</p>\n        <p><strong>Business:</strong> Google</p>\n        <div style=\"margin-top: 20px;\">\n          <h3 style=\"color: #3b82f6;\">Message:</h3>\n          <p style=\"white-space: pre-line;\">ashfdoahnfoi</p>\n        </div>\n      </div>\n    "
+}
