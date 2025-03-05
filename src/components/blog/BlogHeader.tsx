@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Card } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
@@ -21,9 +20,12 @@ export function BlogHeader() {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
+          "Accept": "application/json"  // Ensure JSON response is expected
         },
-        body: JSON.stringify({ email }),
+        body: JSON.stringify({ email }) // Ensure email is correctly formatted
       });
+
+      const result = await response.json().catch(() => null); // Handle cases where no JSON is returned
 
       if (response.ok) {
         toast({
@@ -32,12 +34,12 @@ export function BlogHeader() {
         });
         setEmail("");
       } else {
-        throw new Error("Subscription failed");
+        throw new Error(result?.message || "Subscription failed");
       }
-    } catch (error) {
+    } catch (error: any) {
       toast({
         title: "Error",
-        description: "Failed to subscribe. Please try again later.",
+        description: error.message || "Failed to subscribe. Please try again later.",
         variant: "destructive",
       });
     } finally {
