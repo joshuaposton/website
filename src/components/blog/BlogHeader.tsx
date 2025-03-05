@@ -1,7 +1,50 @@
 
+import { useState } from "react";
 import { Card } from "@/components/ui/card";
+import { Input } from "@/components/ui/input";
+import { Button } from "@/components/ui/button";
+import { useToast } from "@/hooks/use-toast";
+import { LoaderIcon } from "lucide-react";
 
 export function BlogHeader() {
+  const [email, setEmail] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
+  const { toast } = useToast();
+
+  const handleSubscribe = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!email) return;
+
+    setIsLoading(true);
+    try {
+      const response = await fetch("https://hook.us2.make.com/a1mtqpas43mo3wpjo19c4wo2gjyu3tdv", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ email }),
+      });
+
+      if (response.ok) {
+        toast({
+          title: "Success!",
+          description: "You've been subscribed to our newsletter.",
+        });
+        setEmail("");
+      } else {
+        throw new Error("Subscription failed");
+      }
+    } catch (error) {
+      toast({
+        title: "Error",
+        description: "Failed to subscribe. Please try again later.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
   return (
     <div className="mb-16">
       <div className="space-y-4">
@@ -15,21 +58,32 @@ export function BlogHeader() {
       </div>
       
       <Card className="mt-8 p-6 border-none bg-primary/5">
-        <div className="flex items-center justify-between gap-4">
-          <p className="text-sm text-muted-foreground">
+        <form onSubmit={handleSubscribe} className="flex items-center justify-between gap-4 flex-wrap md:flex-nowrap">
+          <p className="text-sm text-muted-foreground w-full md:w-auto">
             Subscribe to our newsletter to get the latest updates
           </p>
-          <div className="flex items-center gap-2">
-            <input
+          <div className="flex items-center gap-2 w-full md:w-auto">
+            <Input
               type="email"
               placeholder="Enter your email"
-              className="px-4 py-2 rounded-lg bg-background border border-border"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              className="w-full md:w-auto"
+              disabled={isLoading}
             />
-            <button className="px-4 py-2 rounded-lg bg-primary text-primary-foreground hover:bg-primary/90 transition-colors">
-              Subscribe
-            </button>
+            <Button 
+              type="submit"
+              disabled={isLoading}
+              className="min-w-[100px]"
+            >
+              {isLoading ? (
+                <LoaderIcon className="h-4 w-4 animate-spin" />
+              ) : (
+                "Subscribe"
+              )}
+            </Button>
           </div>
-        </div>
+        </form>
       </Card>
     </div>
   );
