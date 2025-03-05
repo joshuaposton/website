@@ -14,7 +14,7 @@ export function Navbar() {
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container flex h-16 items-center justify-between">
         <div className="flex items-center gap-2">
-          <a href="#" className="flex items-center gap-3 group">
+          <a href="/" className="flex items-center gap-3 group">
             <div className="relative overflow-hidden h-10 w-10">
               <div className="absolute inset-0 bg-gradient-to-br from-primary via-accent to-primary rounded-full opacity-20 group-hover:opacity-30 transition-opacity duration-300"></div>
               <div className="absolute inset-0 flex items-center justify-center">
@@ -43,6 +43,10 @@ export function Navbar() {
           </a>
           <a href="#use-cases" className="text-sm font-medium hover:text-primary transition-colors relative group">
             Use Cases
+            <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
+          </a>
+          <a href="/blog" className="text-sm font-medium hover:text-primary transition-colors relative group">
+            Blog
             <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
           </a>
           <a href="#faq" className="text-sm font-medium hover:text-primary transition-colors relative group">
@@ -117,6 +121,13 @@ export function Navbar() {
                 onClick={() => setIsOpen(false)}
               >
                 Use Cases
+              </a>
+              <a 
+                href="/blog" 
+                className="text-base font-medium hover:text-primary transition-colors"
+                onClick={() => setIsOpen(false)}
+              >
+                Blog
               </a>
               <a 
                 href="#faq" 
